@@ -1,0 +1,14 @@
+name = "Extended Bone Meal"
+filename = "extendedbonemeal-fabric_1.19.2-2.0.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/bHkCoxMs/versions/8sR6bmIP/extendedbonemeal-fabric_1.19.2-2.0.jar"
+hash-format = "sha512"
+hash = "39a82859f24ac2b8d8fcdfff6cb0b53ea035eeb7b89b389bb0535fc21741b9adcd9380954316c500c0c5f7295d67806ab9089eee4bc6cf9df45c8f7083aadd43"
+
+[update]
+[update.modrinth]
+mod-id = "bHkCoxMs"
+version = "8sR6bmIP"

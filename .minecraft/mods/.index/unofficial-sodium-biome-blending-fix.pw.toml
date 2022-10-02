@@ -1,0 +1,14 @@
+name = " Unofficial Sodium Biome Blending Fix"
+filename = "unofficial-sodium-biome-blending-fix-1.0.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/s5ah9H3E/versions/Wa9swa02/unofficial-sodium-biome-blending-fix-1.0.1.jar"
+hash-format = "sha512"
+hash = "2acd8dd23f051294279952da5370aab82547b66e9444b67aa8e82dda8c1cdd72e46f683f3c8dd5d5c779119c9b2a0153f30de210a23335fdabe9c04a263c64f4"
+
+[update]
+[update.modrinth]
+mod-id = "s5ah9H3E"
+version = "Wa9swa02"

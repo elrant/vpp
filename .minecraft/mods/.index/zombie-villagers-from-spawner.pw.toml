@@ -1,0 +1,14 @@
+name = "Zombie Villagers From Spawner"
+filename = "zombievillagersfromspawner-fabric_1.19.2-2.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/wQlT8uIq/versions/hXaHSDeR/zombievillagersfromspawner-fabric_1.19.2-2.2.jar"
+hash-format = "sha512"
+hash = "059a659a98c0d858acd2e34ba63b48f0299a7b9978331cb5309b7d593a2f2de582521490f4cdf97edbeaec22fe92b36a1b8c42392a07676a8c983f654ca08a99"
+
+[update]
+[update.modrinth]
+mod-id = "wQlT8uIq"
+version = "hXaHSDeR"

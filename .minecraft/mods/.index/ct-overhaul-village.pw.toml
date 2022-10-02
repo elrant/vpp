@@ -1,0 +1,14 @@
+name = "ChoiceTheorem's Overhauled Village"
+filename = "ChoiceTheorem's-overhauled-village-v-3-1-1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/fgmhI8kH/versions/vCg4Atsm/ChoiceTheorem%27s-overhauled-village-v-3-1-1.jar"
+hash-format = "sha512"
+hash = "69449c04700fca203d7625a06c0e18642eaa0db07ac372e8b161542b8ab94b01c062df7f06e70724355c09a6c16749b219bad2a437b0128910d344d2cffe9dbf"
+
+[update]
+[update.modrinth]
+mod-id = "fgmhI8kH"
+version = "vCg4Atsm"

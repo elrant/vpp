@@ -1,0 +1,14 @@
+name = "[Fabric] Tooltip Texts Scroller"
+filename = "tooltip-scroller-1.0.0.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "2f3246ad6024d0097573e6e09f69a980511c00c5"
+
+[update]
+[update.curseforge]
+file-id = 3907198
+project-id = 626587

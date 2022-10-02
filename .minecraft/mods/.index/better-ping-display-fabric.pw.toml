@@ -1,0 +1,14 @@
+name = "Better Ping Display [Fabric]"
+filename = "BetterPingDisplay-Fabric-1.19-1.1.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/MS1ZMyR7/versions/1.19-1.1.1/BetterPingDisplay-Fabric-1.19-1.1.1.jar"
+hash-format = "sha512"
+hash = "4195628429c8480beb3beba34fc3f2337981e7b191425e8760d9e82641a9d66fbb018463c9a1c0cb400a4a04a5ba86943b62f546a2267bc0728642441e2ea7ee"
+
+[update]
+[update.modrinth]
+mod-id = "MS1ZMyR7"
+version = "bjFzDt1o"

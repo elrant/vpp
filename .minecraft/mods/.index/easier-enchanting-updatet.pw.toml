@@ -1,0 +1,14 @@
+name = "Easier Enchanting Updated"
+filename = "easierenchanting-1.4.1.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "d3819b0ae728a58325ba775be9e4f89472eea976"
+
+[update]
+[update.curseforge]
+file-id = 3911376
+project-id = 566008

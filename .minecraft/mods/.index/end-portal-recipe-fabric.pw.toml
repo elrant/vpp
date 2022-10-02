@@ -1,0 +1,14 @@
+name = "End Portal Recipe (Fabric)"
+filename = "endportalrecipe-fabric_1.19.2-3.0.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "ec824470102efe7a34d4338d234dc1b86f0a20e4"
+
+[update]
+[update.curseforge]
+file-id = 3919702
+project-id = 577002

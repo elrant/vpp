@@ -1,0 +1,14 @@
+name = "Mobs Attempt Parkour"
+filename = "mobs-attempt-parkour-0.3-1.19-pre1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/Lh7ROUhC/versions/0.3/mobs-attempt-parkour-0.3-1.19-pre1.jar"
+hash-format = "sha512"
+hash = "1527d4bf00b38472e50dd4099eb9dbdf708ba637c2b29006f3adb31035a1194dfb15fdd7471c8d0c15e8557b88de274895bcda09f494bbac201822394573a423"
+
+[update]
+[update.modrinth]
+mod-id = "Lh7ROUhC"
+version = "40sT1JPD"

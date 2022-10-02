@@ -1,0 +1,14 @@
+name = "Earth2Java"
+filename = "earthtojavamobs-fabric-1.9.3+1.19.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/D2Q91keW/versions/y160U6og/earthtojavamobs-fabric-1.9.3%2B1.19.2.jar"
+hash-format = "sha512"
+hash = "53f24e06ca2554dc24ab56ca24f7b26bb5a2132372194f87d539f41dd09f0e6271d5e7ae9aa3276cdac0a1a546b7628cfde9defe74d0bcccd01c18486d5f36c5"
+
+[update]
+[update.modrinth]
+mod-id = "D2Q91keW"
+version = "y160U6og"

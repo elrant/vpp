@@ -1,0 +1,14 @@
+name = "Horizontal Portals"
+filename = "FractalPortals_Fabric-1.19-1.5.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/H37bFFWD/versions/1.19-1.5.2/FractalPortals_Fabric-1.19-1.5.2.jar"
+hash-format = "sha512"
+hash = "81c44e04b63a6782ad6bf6a877b8ef8c97447187b90ef4c1692b9be33c715ba98c5b63314c34f88b531d3db4269ae919f70ab55e91e67d93368d94415be44120"
+
+[update]
+[update.modrinth]
+mod-id = "H37bFFWD"
+version = "bymWOvxQ"

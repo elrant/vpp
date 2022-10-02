@@ -1,0 +1,14 @@
+name = "Presence Footsteps"
+filename = "PresenceFootsteps-1.6.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/rcTfTZr3/versions/gLDVmoRt/PresenceFootsteps-1.6.2.jar"
+hash-format = "sha512"
+hash = "84c6b819f6648a49374fd63c92ab7eea6b3658f6ba901c4d1869bea57a5806a7eaaf8ec1e36cecad8d2cfbf79d1c492af2c50b29a35d711119617198ad15dd7a"
+
+[update]
+[update.modrinth]
+mod-id = "rcTfTZr3"
+version = "gLDVmoRt"

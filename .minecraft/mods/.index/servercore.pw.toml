@@ -1,0 +1,14 @@
+name = "ServerCore"
+filename = "servercore-1.3.1-1.19.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/4WWQxlQP/versions/1.3.1-1.19.1/servercore-1.3.1-1.19.1.jar"
+hash-format = "sha512"
+hash = "c903115798f77ebc80a97b285eb062f6c62f588d85e6db8abf705a11398d3c6c1570f5c70df90e143925317c48e9bcc849ba6c40821e7195666286e0c4350b78"
+
+[update]
+[update.modrinth]
+mod-id = "4WWQxlQP"
+version = "NDlsg2Sf"

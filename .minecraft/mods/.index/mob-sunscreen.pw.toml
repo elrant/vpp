@@ -1,0 +1,14 @@
+name = "Mob Sunscreen"
+filename = "mobsunscreen-1.19.2-fabric-3.0.7.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/rWSwwjTs/versions/DSZNP3NW/mobsunscreen-1.19.2-fabric-3.0.7.jar"
+hash-format = "sha512"
+hash = "35bd559797d3bcf32c8b3d2d281211ad77d665dde428c968684b10698ce5fbd6452f9b2eca9ed70bb223316b7e26e8ad8dfd6c881bb55141eb2a3c520181f596"
+
+[update]
+[update.modrinth]
+mod-id = "rWSwwjTs"
+version = "DSZNP3NW"

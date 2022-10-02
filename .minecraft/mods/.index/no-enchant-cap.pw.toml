@@ -1,0 +1,14 @@
+name = "No Enchant Cap"
+filename = "no-enchant-cap-2.1.3+1.19.x.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/Wd6j35NE/versions/4tfH5N3n/no-enchant-cap-2.1.3%2B1.19.x.jar"
+hash-format = "sha512"
+hash = "3d81889c809d394d59772357f815f843b72e82444da59218253a6176589999697ab4ad2224458d979f4e225024f213e48d6d46f7e5726967760776c5155069ef"
+
+[update]
+[update.modrinth]
+mod-id = "Wd6j35NE"
+version = "4tfH5N3n"

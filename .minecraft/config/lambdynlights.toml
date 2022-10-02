@@ -1,0 +1,60 @@
+mode = "fastest"
+
+[light_sources]
+	water_sensitive_check = true
+	block_entities = true
+	entities = false
+	tnt = "simple"
+	creeper = "simple"
+
+	[light_sources.settings]
+
+		[light_sources.settings.entities]
+
+			[light_sources.settings.entities.minecraft]
+				dragon_fireball = true
+				dolphin = true
+				chicken = true
+				axolotl = true
+				bee = true
+				arrow = true
+				donkey = true
+				cow = true
+				chest_boat = true
+				boat = true
+				allay = true
+				area_effect_cloud = true
+				bat = true
+				blaze = true
+				cat = true
+				cave_spider = true
+				armor_stand = true
+				cod = true
+				creeper = true
+				player = true
+				drowned = true
+				elder_guardian = true
+				end_crystal = true
+				ender_dragon = true
+				enderman = true
+				endermite = true
+				evoker = true
+				evoker_fangs = true
+				experience_orb = true
+				eye_of_ender = true
+				falling_block = true
+				firework_rocket = true
+				fox = true
+				frog = true
+				ghast = true
+				giant = true
+				glow_item_frame = true
+				glow_squid = true
+				goat = true
+				guardian = true
+				hoglin = true
+				horse = true
+				husk = true
+				illusioner = true
+				iron_golem = true
+

@@ -1,0 +1,14 @@
+name = "Dynamic Surroundings: Remastered Fabric Edition"
+filename = "DynamicSurroundings-RemasteredFabric-1.19-0.1.0.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/4TSI7dRt/versions/xB5LMqZW/DynamicSurroundings-RemasteredFabric-1.19-0.1.0.jar"
+hash-format = "sha512"
+hash = "9dcc2cfc445b47a8750975c6166926c655ab974c99221cd0bf48885b6106cf51203ada82984758ece89a6b6b95663cdf83eeff5104ea690002fd75198dda172f"
+
+[update]
+[update.modrinth]
+mod-id = "4TSI7dRt"
+version = "xB5LMqZW"

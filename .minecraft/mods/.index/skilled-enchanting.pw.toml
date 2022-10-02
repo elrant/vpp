@@ -1,0 +1,14 @@
+name = "Skilled Enchanting"
+filename = "skilled_enchanting-1.0.0-mc1.19.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/EbsfKDHk/versions/GW8nc6ao/skilled_enchanting-1.0.0-mc1.19.2.jar"
+hash-format = "sha512"
+hash = "09c6096a64cb3b69948834ed2f8a54faee1e9128e4e9be33ff0df67b8483139c6c2ce20e6fbff172042636376a22dbd59cf45a45f1ca8b41092c53e728b3d46c"
+
+[update]
+[update.modrinth]
+mod-id = "EbsfKDHk"
+version = "GW8nc6ao"

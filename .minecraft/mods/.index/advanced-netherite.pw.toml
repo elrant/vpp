@@ -1,0 +1,14 @@
+name = "Advanced Netherite"
+filename = "advancednetherite-fabric-1.6.4-1.19.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/CFX9ftUJ/versions/fabric-1.6.4-1.19.2/advancednetherite-fabric-1.6.4-1.19.2.jar"
+hash-format = "sha512"
+hash = "6b3f2247b97f6f5892b0d041a38dc3ea495580cfabe40adf0fe3af2887cdd27b11beed818090e155116cced1b8b133acac5c781188a6e191a7591f6fdc4f2bac"
+
+[update]
+[update.modrinth]
+mod-id = "CFX9ftUJ"
+version = "fMz56414"

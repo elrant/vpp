@@ -1,0 +1,14 @@
+name = "Roundaround's Jukebox Particles"
+filename = "jukeboxparticles-1.0.0+1.19.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/ZwfpGV4V/versions/1.0.0/jukeboxparticles-1.0.0%2B1.19.jar"
+hash-format = "sha512"
+hash = "ad12e51e94e32e589d19d7293c1e726ea46212f61e33d0cc149287a7b8afeb8c7d6438bcd3dd7724d77f3263ebf65148da2321f8da989821af98876cce957c96"
+
+[update]
+[update.modrinth]
+mod-id = "ZwfpGV4V"
+version = "Lvake87u"

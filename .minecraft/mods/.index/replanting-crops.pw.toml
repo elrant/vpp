@@ -1,0 +1,14 @@
+name = "Replanting Crops"
+filename = "replantingcrops-fabric_1.19.2-4.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/EXzIPtJo/versions/MCat7l7t/replantingcrops-fabric_1.19.2-4.1.jar"
+hash-format = "sha512"
+hash = "7d4b3a5515fb0a6b573eb1804fde818b0eca0fcad8e99ed3b441f39187186adc68263a310eab3ca3bcf8e2b806a2556a033505a9d20002641192fa2c734ca8bb"
+
+[update]
+[update.modrinth]
+mod-id = "EXzIPtJo"
+version = "MCat7l7t"

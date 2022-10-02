@@ -1,0 +1,14 @@
+name = "Quick Connect Button"
+filename = "QuickConnectButton-1.2.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/erzkR85H/versions/1.2.1/QuickConnectButton-1.2.1.jar"
+hash-format = "sha512"
+hash = "be73a2559a428466a4d01a0aec51ffc637aca4a9dcdb15210c8e617f5218c8d9109d19f99471665ddee17c761d3425c95fe3ebca798973c64e8ee178b6db80f6"
+
+[update]
+[update.modrinth]
+mod-id = "erzkR85H"
+version = "9LViyNO6"

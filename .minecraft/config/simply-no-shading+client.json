@@ -1,0 +1,11 @@
+{
+  "shadingRules": {
+    "all": false,
+    "blocks": false,
+    "clouds": true,
+    "enhancedBlockEntities": true,
+    "liquids": false
+  },
+  "smartReload": true,
+  "smartReloadMessage": true
+}

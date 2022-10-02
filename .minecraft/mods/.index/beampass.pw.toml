@@ -1,0 +1,14 @@
+name = "BeamPass"
+filename = "beampass-1.1.0.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/jr74IXJS/versions/1.1.0/beampass-1.1.0.jar"
+hash-format = "sha512"
+hash = "5a24c6e6cf08f0736c9009f0e98d8d1fa30997c408577b88b67eb9e8e0ddd7b5e64e7f23758b9fec7ef5764abdad7d2f3e31378180975614a35be6e119f7e957"
+
+[update]
+[update.modrinth]
+mod-id = "jr74IXJS"
+version = "6XtVbLuJ"

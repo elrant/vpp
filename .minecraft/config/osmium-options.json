@@ -1,0 +1,212 @@
+[
+  {
+    "Identifier": "AnimateCapes",
+    "Value": "true",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "OPTION_FILE_SCHEMA",
+    "Value": "\"v2\"",
+    "ValueType": "java.lang.String"
+  },
+  {
+    "Identifier": "LevelHeadEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "ToggleSneakEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "BlockOutlineColor",
+    "Value": "{}",
+    "ValueType": "com.intro.client.render.color.Color"
+  },
+  {
+    "Identifier": "FlyBoostEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "PingDisplayEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "CpsDisplayPosition",
+    "Value": "{\"x\":5,\"y\":5,\"scale\":1.0}",
+    "ValueType": "com.intro.client.util.ElementPosition"
+  },
+  {
+    "Identifier": "FpsEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "NoRainEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "CustomCapeMode",
+    "Value": "\"DISABLED\"",
+    "ValueType": "com.intro.common.config.options.CapeRenderingMode"
+  },
+  {
+    "Identifier": "StatusEffectDisplayPosition",
+    "Value": "{\"x\":5,\"y\":5,\"scale\":1.0}",
+    "ValueType": "com.intro.client.util.ElementPosition"
+  },
+  {
+    "Identifier": "CustomBlockOutline",
+    "Value": "\"VANILLA\"",
+    "ValueType": "com.intro.common.config.options.BlockOutlineMode"
+  },
+  {
+    "Identifier": "ToggleSprintEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "KeystrokesRgb",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "KeystrokesAlpha",
+    "Value": "0.2",
+    "ValueType": "java.lang.Double"
+  },
+  {
+    "Identifier": "StatusEffectDisplayScale",
+    "Value": "1.0",
+    "ValueType": "java.lang.Double"
+  },
+  {
+    "Identifier": "FullbrightEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "SneakMode",
+    "Value": "\"VANILLA\"",
+    "ValueType": "com.intro.common.config.options.SneakMode"
+  },
+  {
+    "Identifier": "HurtBobbingEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "FpsDisplayPosition",
+    "Value": "{\"x\":5,\"y\":5,\"scale\":1.0}",
+    "ValueType": "com.intro.client.util.ElementPosition"
+  },
+  {
+    "Identifier": "MaxStatusEffectsDisplayed",
+    "Value": "1.0",
+    "ValueType": "java.lang.Double"
+  },
+  {
+    "Identifier": "KeystrokesEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "ShowOtherPlayersCapes",
+    "Value": "true",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "HypixelApiKey",
+    "Value": "\"\"",
+    "ValueType": "java.lang.String"
+  },
+  {
+    "Identifier": "DecreaseNetherParticles",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "BlockOutlineAlpha",
+    "Value": "1.0",
+    "ValueType": "java.lang.Double"
+  },
+  {
+    "Identifier": "StatusEffectDisplayMode",
+    "Value": "\"VANILLA\"",
+    "ValueType": "com.intro.common.config.options.StatusEffectDisplayMode"
+  },
+  {
+    "Identifier": "PingDisplayPosition",
+    "Value": "{\"x\":5,\"y\":5,\"scale\":1.0}",
+    "ValueType": "com.intro.client.util.ElementPosition"
+  },
+  {
+    "Identifier": "LevelHeadMode",
+    "Value": "\"NETWORK_LEVEL\"",
+    "ValueType": "com.intro.common.config.options.LevelHeadMode"
+  },
+  {
+    "Identifier": "SetCape",
+    "Value": "\"\"",
+    "ValueType": "java.lang.String"
+  },
+  {
+    "Identifier": "ArmorDisplayPosition",
+    "Value": "{\"x\":5,\"y\":5,\"scale\":1.0}",
+    "ValueType": "com.intro.client.util.ElementPosition"
+  },
+  {
+    "Identifier": "ToggleSprintPosition",
+    "Value": "{\"x\":5,\"y\":5,\"scale\":1.0}",
+    "ValueType": "com.intro.client.util.ElementPosition"
+  },
+  {
+    "Identifier": "AutoGGEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "NoFireEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "ArmorDisplayEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "FireworksDisabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "KeystrokesPosition",
+    "Value": "{\"x\":5,\"y\":5,\"scale\":1.0}",
+    "ValueType": "com.intro.client.util.ElementPosition"
+  },
+  {
+    "Identifier": "CpsDisplayEnabled",
+    "Value": "false",
+    "ValueType": "java.lang.Boolean"
+  },
+  {
+    "Identifier": "AutoGGString",
+    "Value": "\"gg\"",
+    "ValueType": "java.lang.String"
+  },
+  {
+    "Identifier": "KeystrokesColor",
+    "Value": "{}",
+    "ValueType": "com.intro.client.render.color.Color"
+  },
+  {
+    "Identifier": "FlyBoostAmount",
+    "Value": "1.0",
+    "ValueType": "java.lang.Double"
+  }
+]
