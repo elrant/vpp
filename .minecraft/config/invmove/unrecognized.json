@@ -53,7 +53,8 @@
     "vazkii.patchouli.client.book.gui.GuiBookEntry": true,
     "draylar.inmis.ui.BackpackHandledScreen": true,
     "wraith.fwaystones.screen.PocketWormholeScreen": true,
-    "me.fzzyhmstrs.amethyst_imbuement.screen.CrystalAltarScreen": true
+    "me.fzzyhmstrs.amethyst_imbuement.screen.CrystalAltarScreen": true,
+    "net.minecraft.class_407": true
   },
   "hideBackground": {
     "svenhjol.charm.module.woodcutters.WoodcutterScreen": true,
