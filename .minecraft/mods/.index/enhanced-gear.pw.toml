@@ -1,0 +1,14 @@
+name = "Enhanced Equipment"
+filename = "enhancedgear-1.3.0-1.19.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/s0dmmWPU/versions/bjCmLrmI/enhancedgear-1.3.0-1.19.2.jar"
+hash-format = "sha512"
+hash = "170df263e413195dabf61a4c531571e3beff5251ae29d1f831e027910817d8e93c2cd10c9acc0b5821789977bc78747c84b74838ebf54f07a25c31999a528988"
+
+[update]
+[update.modrinth]
+mod-id = "s0dmmWPU"
+version = "bjCmLrmI"

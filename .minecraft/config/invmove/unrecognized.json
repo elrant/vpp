@@ -54,7 +54,10 @@
     "draylar.inmis.ui.BackpackHandledScreen": true,
     "wraith.fwaystones.screen.PocketWormholeScreen": true,
     "me.fzzyhmstrs.amethyst_imbuement.screen.CrystalAltarScreen": true,
-    "net.minecraft.class_407": true
+    "net.minecraft.class_407": true,
+    "io.github.cottonmc.cotton.gui.client.CottonInventoryScreen": true,
+    "io.github.lucaargolo.craftingbench.client.screen.CraftingBenchScreen": true,
+    "com.unlikepaladin.pfm.client.screens.WorkbenchScreen": true
   },
   "hideBackground": {
     "svenhjol.charm.module.woodcutters.WoodcutterScreen": true,
@@ -70,6 +73,9 @@
     "vazkii.patchouli.client.book.gui.GuiBookEntry": true,
     "draylar.inmis.ui.BackpackHandledScreen": true,
     "wraith.fwaystones.screen.PocketWormholeScreen": true,
-    "me.fzzyhmstrs.amethyst_imbuement.screen.CrystalAltarScreen": true
+    "me.fzzyhmstrs.amethyst_imbuement.screen.CrystalAltarScreen": true,
+    "io.github.cottonmc.cotton.gui.client.CottonInventoryScreen": true,
+    "io.github.lucaargolo.craftingbench.client.screen.CraftingBenchScreen": true,
+    "com.unlikepaladin.pfm.client.screens.WorkbenchScreen": true
   }
 }

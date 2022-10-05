@@ -1,0 +1,14 @@
+name = "Crafting Bench"
+filename = "crafting-bench-0.4-BETA+1.19.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/qesnEzsX/versions/iqgdLeDI/crafting-bench-0.4-BETA%2B1.19.jar"
+hash-format = "sha512"
+hash = "85a356872c9465a5a8807eb3202ba8afd6d8a6e60d4babf2be4b5c92ad6f793595a062dd2b8b5062bf966165717c23f110abb9f539121794e80fb2d424f82953"
+
+[update]
+[update.modrinth]
+mod-id = "qesnEzsX"
+version = "iqgdLeDI"
