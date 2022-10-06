@@ -37,7 +37,7 @@ ao:2
 prioritizeChunkUpdates:0
 biomeBlendRadius:7
 renderClouds:"false"
-resourcePacks:["vanilla","Fabric Mods","Moonlight Generated Pack","Supplementaries Generated Pack","Theinar Language","file/Mod Menu Helper.zip","continuity/default","file/Rainbow+Outlines.zip","file/VanillaTweaks_r746039.zip","file/VanillaTweaks_r435445.zip","charmonium/journeyman","lambdabettergrass/default","continuity/glass_pane_culling_fix","visualoverhaul/rounddiscs","minecraft/supporteatinganimation","visualoverhaul/coloredwaterbucket","visualoverhaul/nobrewingbottles"]
+resourcePacks:["vanilla","Moonlight Generated Pack","Supplementaries Generated Pack","Theinar Language","visualoverhaul/rounddiscs","charmonium/journeyman","continuity/default","continuity/glass_pane_culling_fix","file/Rainbow+Outlines.zip","file/Mod Menu Helper.zip","file/VanillaTweaks_r435445.zip","file/VanillaTweaks_r746039.zip","lambdabettergrass/default","minecraft/supporteatinganimation","visualoverhaul/coloredwaterbucket","visualoverhaul/nobrewingbottles","Fabric Mods"]
 incompatibleResourcePacks:["file/Rainbow+Outlines.zip"]
 lastServer:
 lang:en_us
@@ -218,6 +218,7 @@ key_gui.xaero_open_settings:key.keyboard.right.bracket
 key_gui.xaero_map_zoom_in:key.keyboard.unknown
 key_gui.xaero_map_zoom_out:key.keyboard.unknown
 key_gui.xaero_quick_confirm:key.keyboard.right.shift
+key_key.craftpresence.config_keycode.name:key.keyboard.grave.accent
 soundCategory_master:1.0
 soundCategory_music:1.0
 soundCategory_record:1.0
