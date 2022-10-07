@@ -57,7 +57,14 @@
     "net.minecraft.class_407": true,
     "io.github.cottonmc.cotton.gui.client.CottonInventoryScreen": true,
     "io.github.lucaargolo.craftingbench.client.screen.CraftingBenchScreen": true,
-    "com.unlikepaladin.pfm.client.screens.WorkbenchScreen": true
+    "com.unlikepaladin.pfm.client.screens.WorkbenchScreen": true,
+    "net.minecraft.class_4895": true,
+    "svenhjol.charm.module.atlases.AtlasScreen": true,
+    "xaero.pac.client.gui.OtherPlayerConfigWaitScreen": true,
+    "xaero.pac.client.gui.PlayerConfigScreen": true,
+    "de.guntram.mcmod.beenfo.BeenfoScreen": true,
+    "io.github.kosmx.emotes.arch.gui.screen.ingame.FastChosseScreen": true,
+    "io.github.kosmx.emotes.arch.gui.screen.ingame.FullScreenListImpl": true
   },
   "hideBackground": {
     "svenhjol.charm.module.woodcutters.WoodcutterScreen": true,
@@ -76,6 +83,9 @@
     "me.fzzyhmstrs.amethyst_imbuement.screen.CrystalAltarScreen": true,
     "io.github.cottonmc.cotton.gui.client.CottonInventoryScreen": true,
     "io.github.lucaargolo.craftingbench.client.screen.CraftingBenchScreen": true,
-    "com.unlikepaladin.pfm.client.screens.WorkbenchScreen": true
+    "com.unlikepaladin.pfm.client.screens.WorkbenchScreen": true,
+    "net.minecraft.class_4895": true,
+    "svenhjol.charm.module.atlases.AtlasScreen": true,
+    "io.github.kosmx.emotes.arch.gui.screen.ingame.FastChosseScreen": true
   }
 }
