@@ -1,0 +1,8 @@
+.fabric
+.minecraft/dashloader-cache
+.minecraft/logs
+.minecraft/saves
+.minecraft/ModTranslations
+.minecraft/not-enough-crashes
+.minecraft/screenshots
+.minecraft/usercache.json

@@ -1,0 +1,1809 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 2022-10-07 17:36:40
+Description: Unexpected error
+
+java.lang.RuntimeException: Xaero's Minimap (1.19.1_22.15.1_fabric) has crashed! Please report here: bit.ly/XaeroMMIssues
+	at Not Enough Crashes deobfuscated stack trace.(1.19.2+build.20)
+	at xaero.common.minimap.MinimapInterface.checkCrashes(MinimapInterface.java:63)
+	at xaero.common.minimap.MinimapProcessor.onRender(MinimapProcessor.java:147)
+	at xaero.common.minimap.MinimapInterfaceInstance.render(MinimapInterfaceInstance.java:53)
+	at xaero.common.interfaces.render.InterfaceRenderer.renderInterfaces(InterfaceRenderer.java:55)
+	at xaero.common.events.ForgeEventHandler.handleRenderGameOverlayEventPreOverridable(ForgeEventHandler.java:121)
+	at xaero.common.events.ForgeEventHandler.handleRenderGameOverlayEventPre(ForgeEventHandler.java:134)
+	at net.minecraft.client.gui.hud.InGameHud.handler$iih001$onRender(InGameHud:16482)
+	at net.minecraft.client.gui.hud.InGameHud.render(InGameHud:201)
+	at net.minecraft.client.render.GameRenderer.render(GameRenderer:862)
+	at net.minecraft.client.MinecraftClient.render(MinecraftClient:1177)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient:768)
+	at fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:37)
+	at net.minecraft.client.MinecraftClient.modify$fpo000$atTheEndOfSecondCatchBeforePrintingCrashReport(MinecraftClient:26522)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient:795)
+	at net.minecraft.client.main.Main.main(Main:244)
+	at net.minecraft.client.main.Main.main(Main:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:568)
+	at org.polymc.impl.OneSixLauncher.invokeMain(OneSixLauncher.java:104)
+	at org.polymc.impl.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:175)
+	at org.polymc.impl.OneSixLauncher.launch(OneSixLauncher.java:185)
+	at org.polymc.EntryPoint.listen(EntryPoint.java:144)
+	at org.polymc.EntryPoint.main(EntryPoint.java:74)
+Caused by: java.lang.NullPointerException: Cannot invoke "net.minecraft.class_5944.method_1270()" because the return value of "com.mojang.blaze3d.systems.RenderSystem.getShader()" is null
+	at xaero.common.graphics.renderer.multitexture.MultiTextureRenderTypeRenderer.draw(MultiTextureRenderTypeRenderer.java:61)
+	at xaero.common.graphics.renderer.multitexture.MultiTextureRenderTypeRendererProvider.draw(MultiTextureRenderTypeRendererProvider.java:38)
+	at xaero.common.minimap.render.MinimapFBORenderer.renderChunksToFBO(MinimapFBORenderer.java:227)
+	at xaero.common.minimap.render.MinimapFBORenderer.renderChunks(MinimapFBORenderer.java:92)
+	at xaero.common.minimap.render.MinimapRenderer.renderMinimap(MinimapRenderer.java:140)
+	at xaero.common.minimap.MinimapProcessor.onRender(MinimapProcessor.java:141)
+	... 26 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at xaero.common.minimap.MinimapInterface.checkCrashes(MinimapInterface.java:63)
+	at xaero.common.minimap.MinimapProcessor.onRender(MinimapProcessor.java:147)
+	at xaero.common.minimap.MinimapInterfaceInstance.render(MinimapInterfaceInstance.java:53)
+	at xaero.common.interfaces.render.InterfaceRenderer.renderInterfaces(InterfaceRenderer.java:55)
+	at xaero.common.events.ForgeEventHandler.handleRenderGameOverlayEventPreOverridable(ForgeEventHandler.java:121)
+	at xaero.common.events.ForgeEventHandler.handleRenderGameOverlayEventPre(ForgeEventHandler.java:134)
+	at net.minecraft.class_329.handler$iih001$onRender(class_329.java:16482)
+	at net.minecraft.class_329.method_1753(class_329.java:201)
+Mixins in Stacktrace:
+	net.minecraft.class_329:
+		com.chaosthedude.naturescompass.mixins.HUDMixin (naturescompass.mixins.json)
+		me.fzzyhmstrs.amethyst_imbuement.mixins.InGameHudMixin (amethyst_imbuement.mixins.json)
+		org.orecruncher.dsurround.mixins.core.MixinIngameHud (dsurround.mixins.json)
+		net.fabricmc.fabric.mixin.client.rendering.InGameHudMixin (fabric-rendering-v1.mixins.json)
+		fi.dy.masa.malilib.mixin.MixinInGameHud (mixins.malilib.json)
+		me.jellysquid.mods.sodium.mixin.features.options.MixinInGameHud (sodium.mixins.json)
+		me.juancarloscp52.bedrockify.mixin.client.features.pickupAnimations.InGameHudMixin (bedrockify.mixins.json)
+		net.xolt.freecam.mixins.InGameHudMixin (freecam.mixins.json)
+		dqu.additionaladditions.mixin.GuiMixin (AdditionalAdditions.mixins.json)
+		me.flashyreese.mods.sodiumextra.mixin.gui.MixinInGameHud (sodium-extra.mixins.json)
+		net.blay09.mods.balm.mixin.GuiMixin (balm.mixins.json)
+		io.github.kvverti.colormatic.mixin.text.InGameHudMixin (colormatic.mixins.json)
+		me.cominixo.betterf3.mixin.scoreboard.ScoreboardMixin (betterf3.mixins.json)
+		com.yurisuika.raised.mixin.client.gui.hud.InGameHudMixin (raised.mixins.json)
+		de.guntram.mcmod.durabilityviewer.mixin.PotionEffectsMixin (mixins.durabilityviewer.json)
+		com.anthonyhilyard.highlighter.mixin.GuiMixin (highlighter.mixins.json)
+		squeek.appleskin.mixin.InGameHudMixin (appleskin.mixins.json)
+		me.juancarloscp52.bedrockify.mixin.client.features.heldItemTooltips.ItemTooltipsMixin (bedrockify.mixins.json)
+		me.juancarloscp52.bedrockify.mixin.client.features.screenSafeArea.InGameHudMixin (bedrockify.mixins.json)
+		net.bettercombat.mixin.client.InGameHudInject (bettercombat.mixins.json)
+		net.naari3.offershud.mixin.InGameHudMixin (offershud.mixins.json)
+		com.acikek.purpeille.mixin.client.InGameHudMixin (purpeille.mixins.json)
+		net.trueHorse.wildToolAccess.mixin.InGameHudMixin (wildtoolaccess.mixins.json)
+		de.maxhenkel.voicechat.mixin.GuiMixin (voicechat.mixins.json)
+		mod.crend.dynamiccrosshair.mixin.InGameHudMixin (dynamiccrosshair.mixins.json)
+		me.flourick.fvt.mixin.InGameHudMixin (fvt.mixins.json)
+		xaero.map.mixin.MixinInGameHud (xaeroworldmap.mixins.json)
+		svenhjol.charm.mixin.no_spyglass_scope.RemoveSpyglassHudMixin (charm.mixins.json)
+		com.chaosthedude.explorerscompass.mixins.InGameHudMixin (explorerscompass.mixins.json)
+		se.icus.mag.statuseffecttimer.mixin.StatusEffectTimerMixin (statuseffecttimer.mixins.json)
+		xaero.common.mixin.MixinInGameHud (xaerominimap.mixins.json)
+		de.guntram.mcmod.beenfo.mixin.HiveInfoRenderMixin (mixins.beenfo.json)
+		eu.pb4.styledplayerlist.mixin.client.InGameHudMixin (styledplayerlist.mixins.json)
+
+-- Affected level --
+Details:
+	All players: 1 total; [class_746['nyaambxr'/499, l='ClientLevel', x=238.27, y=109.00, z=-245.87]]
+	Chunk stats: 1024, 377
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (112,79,0), Section: (at 0,15,0 in 7,4,0; chunk contains blocks 112,-64,0 to 127,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 48417 game time, 54834 day time
+	Server brand: fabric
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.class_638.method_8538(class_638.java:453)
+	at net.minecraft.class_310.method_1587(class_310.java:2341)
+	at net.minecraft.class_310.method_1514(class_310.java:792)
+	at fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:37)
+	at net.minecraft.class_310.modify$fpo000$atTheEndOfSecondCatchBeforePrintingCrashReport(class_310.java:26522)
+	at net.minecraft.class_310.method_1514(class_310.java:795)
+	at net.minecraft.client.main.Main.method_44604(Main.java:244)
+	at net.minecraft.client.main.Main.main(Main.java:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.polymc.impl.OneSixLauncher.invokeMain(OneSixLauncher.java:104)
+	at org.polymc.impl.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:175)
+	at org.polymc.impl.OneSixLauncher.launch(OneSixLauncher.java:185)
+	at org.polymc.EntryPoint.listen(EntryPoint.java:144)
+	at org.polymc.EntryPoint.main(EntryPoint.java:74)
+Mixins in Stacktrace:
+	net.minecraft.class_638:
+		me.dacubeking.clientsidenoteblocks.mixin.ClientWorldMixin (clientsidenoteblocks.mixins.json)
+		io.github.kvverti.colormatic.mixin.world.ClientWorldMixin (colormatic.mixins.json)
+		me.steinborn.krypton.mixin.client.fastchunkentityaccess.ClientWorldMixin (krypton.mixins.json)
+		dev.onyxstudios.cca.mixin.entity.client.MixinClientWorld (mixins.cardinal_components_entity.json)
+		io.github.kvverti.colormatic.mixinsodium.world.SodiumClientWorldMixin (colormatic.sodium.mixins.json)
+		dev.lambdaurora.lambdynlights.mixin.ClientWorldMixin (lambdynlights.mixins.json)
+		dev.architectury.mixin.fabric.client.MixinClientLevel (architectury.mixins.json)
+		dev.tr7zw.entityculling.mixin.ClientWorldMixin (entityculling.mixins.json)
+		me.jellysquid.mods.sodium.mixin.features.chunk_rendering.MixinClientWorld (sodium.mixins.json)
+		xaero.common.mixin.MixinClientWorld (xaerominimap.mixins.json)
+		me.jellysquid.mods.lithium.mixin.chunk.entity_class_groups.ClientWorldMixin (lithium.mixins.json)
+		genandnic.walljump.mixin.client.ClientWorldFallingSoundMixin (walljump.mixins.json)
+		dev.onyxstudios.cca.mixin.world.client.MixinClientWorld (mixins.cardinal_components_world.json)
+		svenhjol.charm.mixin.event.AddEntityClientMixin (charm.mixins.json)
+		paulevs.edenring.mixin.client.ClientLevelMixin (edenring.mixins.client.json)
+		snownee.jade.mixin.ClientLevelMixin (jade.mixins.json)
+		xaero.pac.common.mixin.MixinClientLevel (openpartiesandclaims.mixins.json)
+		fionathemortal.betterbiomeblend.mixin.MixinClientWorld (betterbiomeblend.mixins.json)
+		net.fabricmc.fabric.mixin.event.lifecycle.client.ClientWorldMixin (fabric-lifecycle-events-v1.client.mixins.json)
+		ca.spottedleaf.starlight.mixin.client.world.ClientLevelMixin (starlight.mixins.json)
+		me.lucko.spark.fabric.mixin.ClientWorldAccessor (spark.mixins.json)
+		me.pieking1215.waterdripsound.mixin.client.MixinClientWorld (waterdripsound.mixins.json)
+		xaero.map.mixin.MixinClientWorld (xaeroworldmap.mixins.json)
+	net.minecraft.class_310:
+		dev.lambdaurora.spruceui.mixin.MinecraftClientMixin (spruceui.mixins.json)
+		dev.quantumfusion.dashloader.mixin.main.MinecraftClientMixin (dashloader.mixins.json)
+		fudge.notenoughcrashes.mixins.client.MixinMinecraftClient (notenoughcrashes.mixins.json)
+		squeek.appleskin.mixin.MinecraftClientMixin (appleskin.mixins.json)
+		net.fabricmc.fabric.mixin.datagen.client.MinecraftClientMixin (fabric-data-generation-api-v1.client.mixins.json)
+		traben.entity_texture_features.mixin.reloading.MixinMinecraftClient (entity_texture_features-common.mixins.json)
+		malte0811.ferritecore.mixin.fabric.MinecraftMixin (ferritecore.fabric.mixin.json)
+		net.bettercombat.mixin.client.MinecraftClientInject (bettercombat.mixins.json)
+		com.ishland.vmp.mixins.timesource.MixinMinecraftClient (vmp.mixins.json)
+		dev.lambdaurora.lambdynlights.mixin.MinecraftClientMixin (lambdynlights.mixins.json)
+		me.jellysquid.mods.sodium.mixin.core.MixinMinecraftClient (sodium.mixins.json)
+		xaero.common.mixin.MixinMinecraftClient (xaerominimap.mixins.json)
+		net.fabricmc.fabric.mixin.networking.accessor.MinecraftClientAccessor (fabric-networking-api-v1.client.mixins.json)
+		io.socol.betterthirdperson.mixin.MinecraftClientMixin (betterthirdperson.mixins.json)
+		fuzs.puzzleslib.mixin.client.accessor.MinecraftAccessor (puzzleslib.fabric.mixins.json)
+		de.guntram.mcmod.clickthrough.mixins.ItemUseMixin (mixins.clickthrough.json)
+		net.bunten.enderscape.client.mixin.MinecraftClientMixin (enderscape.client.mixins.json)
+		me.flourick.fvt.mixin.MinecraftClientMixin (fvt.mixins.json)
+		io.wispforest.owo.mixin.MinecraftClientMixin (owo.mixins.json)
+		vazkii.patchouli.mixin.client.MixinMinecraft (patchouli_fabric.mixins.json)
+		net.blay09.mods.balm.mixin.MinecraftMixin (balm.mixins.json)
+		randommcsomethin.fallingleaves.mixin.MinecraftClientMixin (fallingleaves.mixins.json)
+		net.minecraftforge.mixin.client.MinecraftMixin (forgeconfigapiport.fabric.mixins.json)
+		fudge.notenoughcrashes.fabric.mixins.client.CatchInitMInecraftClientMixin (notenoughcrashes.fabric.mixins.json)
+		xaero.map.mixin.MixinMinecraftClient (xaeroworldmap.mixins.json)
+		com.kqp.inventorytabs.mixin.TabManagerContainerImplementer (inventorytabs.mixins.json)
+		net.fabricmc.fabric.mixin.event.interaction.client.MinecraftClientMixin (fabric-events-interaction-v0.client.mixins.json)
+		paulevs.edenring.mixin.client.MinecraftMixin (edenring.mixins.client.json)
+		io.wispforest.owo.mixin.ui.MinecraftClientMixin (owo.mixins.json)
+		net.xolt.freecam.mixins.MinecraftClientMixin (freecam.mixins.json)
+		traben.solid_mobs.mixin.MixinMinecraftClient (mob-collisions.mixins.json)
+		net.fabricmc.fabric.mixin.registry.sync.client.MinecraftClientMixin (fabric-registry-sync-v0.client.mixins.json)
+		ca.fxco.moreculling.mixin.blockstates.MinecraftClient_loadBlocksMixin (moreculling.mixins.json)
+		draylar.omegaconfig.mixin.ClientMixin (omega-config.mixins.json)
+		org.betterx.bclib.mixin.client.MinecraftMixin (bclib.mixins.client.json)
+		net.cobrasrock.skinswapper.mixin.MixinMinecraftClient (skinswapper.mixins.json)
+		fi.dy.masa.malilib.mixin.MixinMinecraftClient (mixins.malilib.json)
+		me.juancarloscp52.bedrockify.mixin.client.features.reacharoundPlacement.MinecraftClientMixin (bedrockify.mixins.json)
+		me.juancarloscp52.bedrockify.mixin.client.core.clientRenderTimer.MinecraftClientMixin (bedrockify.mixins.json)
+		me.ramidzkh.fabrishot.mixins.MinecraftClientMixin (mixins.fabrishot.json)
+		me.doinkythederp.lanextender.mixin.MinecraftClientMixin (lan_extender.mixins.json)
+		ca.fxco.moreculling.mixin.MinecraftClient_blockRenderManagerMixin (moreculling.mixins.json)
+		betteradvancements.mixin.MinecraftMixin (betteradvancements.mixins.json)
+		me.roundaround.roundalib.mixin.MinecraftClientMixin (roundalib.mixins.json)
+		me.flashyreese.mods.sodiumextra.mixin.gui.MinecraftClientAccessor (sodium-extra.mixins.json)
+		io.github.shaksternano.imperishableitems.mixin.client.util.MinecraftClientMixin (imperishableitems.mixins.json)
+		eu.pb4.polymer.mixin.client.MinecraftClientMixin (polymer.mixins.json)
+		net.trueHorse.wildToolAccess.mixin.MinecraftClientMixin (wildtoolaccess.mixins.json)
+		de.rubixdev.enchantedshulkers.mixin.client.MinecraftClientMixin (enchantedshulkers.mixins.json)
+		io.github.lukebemish.dynamic_asset_generator.mixin.MinecraftMixin (mixin.dynamic_asset_generator.json)
+		net.fabricmc.fabric.mixin.screen.MinecraftClientMixin (fabric-screen-api-v1.mixins.json)
+		shcm.shsupercm.fabric.citresewn.defaults.mixin.types.enchantment.MinecraftClientMixin (citresewn-defaults.mixins.json)
+		jerozgen.languagereload.mixin.MinecraftClientMixin (languagereload.mixins.json)
+		dev.stashy.extrasounds.mixin.HotbarSlotSound (extrasounds.mixins.json)
+		de.guntram.mcmod.durabilityviewer.mixin.WindowTitleMixin (mixins.durabilityviewer.json)
+		com.anthonyhilyard.iceberg.mixin.MinecraftMixin (iceberg.mixins.json)
+		net.fabricmc.fabric.mixin.event.lifecycle.client.MinecraftClientMixin (fabric-lifecycle-events-v1.client.mixins.json)
+		net.darkhax.bookshelf.mixin.client.AccessorMinecraft (bookshelf.common.mixins.json)
+		me.lucko.spark.fabric.mixin.MinecraftClientAccessor (spark.mixins.json)
+		net.bettercombat.mixin.client.MinecraftClientAccessor (bettercombat.mixins.json)
+		de.maxhenkel.voicechat.mixin.MinecraftMixin (voicechat.mixins.json)
+		com.blamejared.controlling.mixin.OpenGuiMixin (controlling.fabric.mixins.json)
+		dev.stashy.extrasounds.mixin.inventory.InventoryScreenSounds (extrasounds.mixins.json)
+		dev.architectury.mixin.fabric.client.MixinMinecraft (architectury.mixins.json)
+		xaero.pac.common.mixin.MixinMinecraft (openpartiesandclaims.mixins.json)
+		io.github.kvverti.colormatic.mixin.network.MinecraftClientMixin (colormatic.mixins.json)
+		jerozgen.languagereload.mixin.MinecraftClientAccessor (languagereload.mixins.json)
+		com.natamus.collective_fabric.fabric.mixin.MinecraftMixin (collective_fabric.mixins.json)
+	net.minecraft.client.main.Main:
+		io.github.ultimateboomer.smoothboot.mixin.client.MainMixin (smoothboot.mixins.json)
+		fudge.notenoughcrashes.fabric.mixins.client.MixinMain (notenoughcrashes.fabric.mixins.json)
+		dev.quantumfusion.dashloader.mixin.main.MainMixin (dashloader.mixins.json)
+
+-- Last reload --
+Details:
+	Reload number: 2
+	Reload reason: manual
+	Finished: No
+	Packs: Default, Fabric Mods, Moonlight Generated Pack, Theinar Language, visualoverhaul/rounddiscs, charmonium/journeyman, continuity/default, continuity/glass_pane_culling_fix, Mod Menu Helper.zip, VanillaTweaks_r435445.zip, VanillaTweaks_r746039.zip, lambdabettergrass/default, minecraft/supporteatinganimation, visualoverhaul/coloredwaterbucket, visualoverhaul/nobrewingbottles, Rainbow+Outlines.zip
+	Recovery: Yes
+	Recovery reason: java.util.concurrent.CompletionException: java.lang.StackOverflowError
+	at Not Enough Crashes deobfuscated stack trace.(1.19.2+build.20)
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:791)
+	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482)
+	at net.minecraft.resource.SimpleResourceReload.method_18365(SimpleResourceReload:69)
+	at net.minecraft.util.thread.ThreadExecutor.executeTask(ThreadExecutor:157)
+	at net.minecraft.util.thread.ReentrantThreadExecutor.executeTask(ReentrantThreadExecutor:23)
+	at net.minecraft.util.thread.ThreadExecutor.runTask(ThreadExecutor:131)
+	at net.minecraft.util.thread.ThreadExecutor.runTasks(ThreadExecutor:116)
+	at net.minecraft.client.MinecraftClient.render(MinecraftClient:1129)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient:768)
+	at fudge.notenoughcrashes.mixinhandlers.InGameCatcher.handleClientCrash(InGameCatcher.java:37)
+	at net.minecraft.client.MinecraftClient.modify$fpo000$atTheEndOfSecondCatchBeforePrintingCrashReport(MinecraftClient:26522)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient:795)
+	at net.minecraft.client.main.Main.main(Main:244)
+	at net.minecraft.client.main.Main.main(Main:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:568)
+	at org.polymc.impl.OneSixLauncher.invokeMain(OneSixLauncher.java:104)
+	at org.polymc.impl.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:175)
+	at org.polymc.impl.OneSixLauncher.launch(OneSixLauncher.java:185)
+	at org.polymc.EntryPoint.listen(EntryPoint.java:144)
+	at org.polymc.EntryPoint.main(EntryPoint.java:74)
+Caused by: java.lang.StackOverflowError
+	at java.lang.invoke.DirectMethodHandle.allocateInstance(DirectMethodHandle.java:520)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:116)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.addInner(SpriteFinderImpl.java:119)
+	at net.fabricmc.fabric.impl.renderer.SpriteFinderImpl$Node.add(SpriteFinderImpl.java:103)
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19.2
+	Minecraft Version ID: 1.19.2
+	Operating System: Linux (amd64) version 5.19.12-200.fc36.x86_64
+	Java Version: 17.0.4.1, Red Hat, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Red Hat, Inc.
+	Memory: 1694372792 bytes (1615 MiB) / 7981760512 bytes (7612 MiB) up to 8589934592 bytes (8192 MiB)
+	CPUs: 6
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz
+	Identifier: Intel64 Family 6 Model 158 Stepping 10
+	Microarchitecture: unknown
+	Frequency (GHz): 2.80
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 6
+	Graphics card #0 name: GP108 [GeForce GT 1030]
+	Graphics card #0 vendor: NVIDIA Corporation (0x10de)
+	Graphics card #0 VRAM (MB): 288.00
+	Graphics card #0 deviceId: 0x1d01
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 16148.71
+	Virtual memory used (MB): 12957.70
+	Swap memory total (MB): 8192.00
+	Swap memory used (MB): 617.25
+	JVM Flags: 2 total; -Xms512m -Xmx8192m
+	Fabric Mods: 
+		additionaladditions: Additional Additions 5.0.2
+		advancednetherite: Advanced Netherite 1.6.4-1.19.2
+		advancementinfo: AdvancementInfo 1.19.1-fabric0.58.5-1.3.1
+		amethyst_core: Amethyst Core 0.3.1+1.19
+		amethyst_imbuement: Amethyst Imbuement 1.19-12
+			coloredglowlib: ColoredGlow Lib 1.3.4
+			patchouli: Patchouli 1.19-73-FABRIC
+			playerabilitylib: Pal 1.6.0
+			structurized-reborn: Structurized Reborn 1.19-01
+		animatica: Animatica 0.5+1.19
+		antighost: AntiGhost 1.19.1-fabric0.58.5-1.1.5
+			crowdin-translate: CrowdinTranslate 1.4+1.19
+		appleskin: AppleSkin 2.4.1+mc1.19
+		architectury: Architectury 6.2.46
+		armorsoundtweak: Armor Sound Tweak 6.0.0
+			com_electronwill_night-config_core: core 3.6.5
+			com_electronwill_night-config_toml: toml 3.6.5
+		audio_engine_tweaks: Tweaks for Audio Engine 1.2.3
+		auditory: Auditory 0.0.3-1.19.x
+		axolotlitemfix: Axolotl Item Fix 1.1.3
+		badpackets: Bad Packets 0.2.0
+		balm-fabric: Balm 4.5.2+0
+		bamboocombat: Bamboo Combat 1.0.2
+		bclib: BCLib 2.1.0
+		beampass: BeamPass Mod 1.1.0
+			com_github_llamalad7_mixinextras: MixinExtras 0.0.12
+		bedbenefits: BedBenefits 9.1.2
+		bedrockify: BedrockIfy 1.4.2+mc1.19.1
+		bedrodium: Bedrodium 0.2
+		beenfo: Beenfo 1.19.1-fabric0.58.5-1.3.3
+			gbfabrictools: GBfabrictools 1.3.4+1.19
+		better-christmas-chests: Better Christmas Chests 4.0.0+build.14
+		better_respawn: Better Respawn 1.19.2-2.0.1
+		better_withered_mobs: Better Withered Mobs 1.7.1
+		betteradvancements: Better Advancements 0.2.2.142
+		betterbeds: Better Beds 1.2.0
+		betterbiomeblend: Better Biome Blend 1.19-1.3.6-fabric
+		bettercombat: Better Combat 1.4.1+1.19
+		betterdroppeditems: Better Dropped Items 1.4.1-1.19
+		betterf3: BetterF3 1.3.2
+		betterpingdisplay: Better Ping Display 1.1.1
+		betterthanmending: BetterThanMending 1.3.0
+		betterthirdperson: Better Third Person 1.8.1
+		bettervillage: Better village 2.0.0
+		biomemakeover: Biome Makeover 1.19.2-1.5.12
+		blanket-client-tweaks: Blanket Client-tweaks 1.1.2
+		boat-with-everything: Boat with Everything 1.1.0+modfest-duct-tape
+		boatiview: Boat Item View Fabric 0.0.4
+		bookshelf: Bookshelf 16.1.5
+		borderlessmining: Borderless Mining 1.1.5+1.19
+		botanypots: BotanyPots 9.0.3
+		brazier: Brazier 5.0.0
+		capes: Capes 1.4.5+1.19
+			omega-config: OmegaConfig 1.2.3-1.18.1
+		cardinal-components-base: Cardinal Components API (base) 5.0.2
+		cavedust: Cave Dust 1.2.0
+		cem: Custom Entity Models 0.7.1
+		charm: Charm 4.4.3
+			com_moandjiezana_toml_toml4j: toml4j 0.7.2
+		charmonium: Charmonium 4.2.1
+		chunky: Chunky 1.3.38
+		chunkyborder: Chunkyborder 1.1.34
+		ciif: Craftable Invisible Item Frames 1.0.0+1.19
+			nbtcrafting: NBT Crafting 2.1.3+mc1.19
+		cinderscapes: Cinderscapes 3.0.0
+			cinderscapes-client: Cinderscapes: Client 3.0.0
+			cinderscapes-common: Cinderscapes: Common 3.0.0
+			cinderscapes-worldgen: Cinderscapes: World Generation 3.0.0
+			terraform-biome-remapper-api-v1: Terraform Biome Remapper API (v1) 4.1.1
+			terraform-shapes-api-v1: Terraform Shapes API (v1) 4.1.1
+			terraform-wood-api-v1: Terraform Wood API (v1) 4.1.1
+		citresewn: CIT Resewn 1.1.2+1.19.2
+			citresewn-defaults: CIT Resewn: Defaults 1.1.2+1.19.2
+		cleardespawn: Clear Despawn 1.1.8
+		clickthrough: ClickThrough 1.19.1-fabric0.58.5-0.4
+		clientsidenoteblocks: ClientSideNoteblocks 2.2
+		cloth-config: Cloth Config v8 8.2.88
+			cloth-basic-math: cloth-basic-math 0.6.1
+		clumps: Clumps 9.0.0+11
+		collective-fabric: Collective (Fabric) 4.64
+			fiber: fiber 0.23.0-2
+		colormatic: Colormatic 3.1.2+mc.1.19
+		colouredtooltips: ColouredTooltips 18.1.3
+		comforts: Comforts 6.0.1+1.19.2
+			spectrelib: SpectreLib 0.10.0+1.19
+		completeconfig: CompleteConfig 2.0.0
+			coat: Coat 1.0.0-beta.17+mc22w17a
+			completeconfig-base: completeconfig-base 2.0.0
+			completeconfig-gui-cloth: completeconfig-gui-cloth 2.0.0
+			completeconfig-gui-coat: completeconfig-gui-coat 2.0.0
+		consistency_plus: Consistency Plus 0.5.1+1.19.2
+			stonecutter_recipe_tags: Stonecutter Recipe Tags 4.0.0+1.19.9b8d04c.fabric
+		continuity: Continuity 2.0.1+1.19
+		controlling: Controlling For Fabric 10.0+6
+		craftingbench: Crafting Bench 0.4-BETA+1.19
+		craftpresence: CraftPresence 1.8.12
+			fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.6.1+aeb40ebe90
+		creativecore: CreativeCore (Fabric) 2.8.5
+		crops_love_rain: Crops Love Rain 1.3.0
+		cryingportals-fabric: Crying Portals (Fabric) 1.6
+		ctov: ChoiceTheorem's Overhauled Villages 3.1
+		cull-less-leaves: Cull Less Leaves 1.0.5
+			conditional-mixin: conditional mixin 0.3.0
+		customlan: Custom LAN 1.19.1-v2.2.0
+			fabric-api-base: Fabric API Base 0.4.11+e62f51a390
+			fabric-command-api-v2: Fabric Command API (v2) 2.1.7+0c17ea9690
+			fabric-networking-api-v1: Fabric Networking API (v1) 1.2.4+5eb68ef290
+			org_apache_commons_commons-text: commons-text 1.9
+		cyan: Cyan 0.6.0+1.19.2
+			cyanlib: CyanLib 0.0.5+1.19.2
+			midnightlib: MidnightLib 0.5.2
+		damagetilt: Damage Tilt 1.19-fabric-0.1.2
+		darkpaintings: DarkPaintings 13.1.2
+		dashloader: DashLoader 4.1.3+1.19
+			com_github_luben_zstd-jni: zstd-jni 1.5.2-2
+			dev_quantumfusion_hyphen: Hyphen 0.2.2
+			dev_quantumfusion_taski: Taski 1.1.0
+		dawn: Dawn API 3.5.0
+		debugify: Debugify 2.6.2
+		diggusmaximus: Diggus Maximus 1.5.8-1.19
+			kyrptconfig: Kyrpt Config 1.4.14-1.19
+		disable_custom_worlds_advice: Disable Custom Worlds Advice 3.0
+		dismountentity-fabric: Dismount Entity (Fabric) 2.0
+		dsurround: Dynamic Surroundings: Remastered Fabric Edition 0.1.0
+			org_openjdk_nashorn_nashorn-core: nashorn-core 15.3
+		durabilityviewer: Giselbaers Durability Viewer 1.19.1-fabric0.58.5-1.10.3
+		dynamic_asset_generator: Dynamic Asset Generator 1.0.1
+			advanced_runtime_resource_pack: Runtime Resource Pack 0.6.4
+		dynamiccrosshair: Dynamic Crosshair 3.5.1+1.19
+		dynamiccrosshaircompat: Dynamic Crosshair Compat 1.4.1+1.19
+		dynamicfps: Dynamic FPS 2.2.0
+		earthtojavamobs: Earth2Java 1.9.3
+		easierenchanting: Easier Enchanting 1.4.1
+		eatinganimationid: Eating Animation 1.9
+		ecologics: Ecologics 2.1.10
+		edenring: EdenRing 0.6.4
+		effective: Effective 1.2.2
+		emotecraft: Emotecraft 2.2.5
+			bendy-lib: Bendy api 2.1.2
+		enchantedshulkers: Enchanted Shulkers 1.0.4
+			mm: Manningham Mills 2.3
+		enchantment_lore: Enchantment Lore 1.3.0-b1
+		enchantmentcompat: Enchantment Compatibility 1.0.1
+			roundalib: RoundaLib 0.2.1
+		enderscape: Enderscape 0.3.5-1.19.1
+		endportalrecipe-fabric: End Portal Recipe (Fabric) 3.0
+		enhancedblockentities: Enhanced Block Entities 0.7.1+1.19
+			spruceui: SpruceUI 4.0.0+1.19
+		enhancedgear: Enhanced Gear 1.3.0-1.19.2
+		enriched: Enriched 2.4.5
+		entity_texture_features: Entity Texture Features 4.1.1
+			org_apache_httpcomponents_httpmime: httpmime 4.5.10
+		entityculling: EntityCulling-Fabric 1.5.2-mc1.19
+			com_logisticscraft_occlusionculling: occlusionculling 0.0.6-SNAPSHOT
+		essential_commands: Essential Commands 0.28.1-mc1.19.2
+			com_fasterxml_jackson_dataformat_jackson-dataformat-yaml: jackson-dataformat-yaml 2.13.0
+			ec-core: Essential Commands Core 1.2.1-mc1.19.2
+			fabric-permissions-api-v0: fabric-permissions-api 0.2-SNAPSHOT
+			placeholder-api: Placeholder API 2.0.0-beta.7+1.19
+		explorerscompass: Explorer's Compass 1.19.2-2.1.2-fabric
+		extendedbonemeal-fabric: Extended Bone Meal (Fabric) 2.0
+		extrabars: More Metal Bars 1.0.0
+		extrasounds: ExtraSounds 2.3.1+1.19.2-1.19.1
+		fabric-api: Fabric API 0.61.0+1.19.2
+			fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.9+9ff28f4090
+			fabric-biome-api-v1: Fabric Biome API (v1) 9.0.17+aeb40ebe90
+			fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.20+aeb40ebe90
+			fabric-client-tags-api-v1: Fabric Client Tags 1.0.1+b35fea8390
+			fabric-command-api-v1: Fabric Command API (v1) 1.2.11+f71b366f90
+			fabric-commands-v0: Fabric Commands (v0) 0.2.28+df3654b390
+			fabric-containers-v0: Fabric Containers (v0) 0.1.34+df3654b390
+			fabric-content-registries-v0: Fabric Content Registries (v0) 3.3.0+624e468e90
+			fabric-convention-tags-v1: Fabric Convention Tags 1.1.1+7cd20a1490
+			fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.2.5+aeb40ebe90
+			fabric-data-generation-api-v1: Fabric Data Generation API (v1) 5.1.9+a680b9b490
+			fabric-dimensions-v1: Fabric Dimensions API (v1) 2.1.31+0dd10df690
+			fabric-entity-events-v1: Fabric Entity Events (v1) 1.4.18+9ff28f4090
+			fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.4.28+aeb40ebe90
+			fabric-events-lifecycle-v0: Fabric Events Lifecycle (v0) 0.2.28+df3654b390
+			fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.21+aeb40ebe90
+			fabric-item-api-v1: Fabric Item API (v1) 1.5.7+35a03c4390
+			fabric-item-groups-v0: Fabric Item Groups (v0) 0.3.29+4e8ca3fd90
+			fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.20+aeb40ebe90
+			fabric-keybindings-v0: Fabric Key Bindings (v0) 0.2.18+df3654b390
+			fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.1.2+aeb40ebe90
+			fabric-loot-api-v2: Fabric Loot API (v2) 1.1.3+83a8659290
+			fabric-loot-tables-v1: Fabric Loot Tables (v1) 1.1.6+9e7660c690
+			fabric-message-api-v1: Fabric Message API (v1) 5.0.3+176380a290
+			fabric-mining-level-api-v1: Fabric Mining Level API (v1) 2.1.14+33fbc73890
+			fabric-models-v0: Fabric Models (v0) 0.3.17+aeb40ebe90
+			fabric-networking-v0: Fabric Networking (v0) 0.3.21+df3654b390
+			fabric-object-builder-api-v1: Fabric Object Builder API (v1) 4.0.11+aeb40ebe90
+			fabric-particles-v1: Fabric Particles (v1) 1.0.10+aeb40ebe90
+			fabric-registry-sync-v0: Fabric Registry Sync (v0) 0.9.25+726b652090
+			fabric-renderer-api-v1: Fabric Renderer API (v1) 1.0.10+aeb40ebe90
+			fabric-renderer-indigo: Fabric Renderer - Indigo 0.6.12+aeb40ebe90
+			fabric-renderer-registries-v1: Fabric Renderer Registries (v1) 3.2.20+df3654b390
+			fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.14+aeb40ebe90
+			fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.0.7+aeb40ebe90
+			fabric-rendering-v0: Fabric Rendering (v0) 1.1.22+df3654b390
+			fabric-rendering-v1: Fabric Rendering (v1) 1.10.16+aeb40ebe90
+			fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 2.0.11+e62f51a390
+			fabric-screen-api-v1: Fabric Screen API (v1) 1.0.26+f05effaf90
+			fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.3.0+1cc24b1b90
+			fabric-textures-v0: Fabric Textures (v0) 1.0.20+aeb40ebe90
+			fabric-transfer-api-v1: Fabric Transfer API (v1) 2.1.0+8f88597390
+			fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 1.3.0+42d99c3290
+		fabric-language-kotlin: Fabric Language Kotlin 1.8.3+kotlin.1.7.10
+			org_jetbrains_kotlin_kotlin-reflect: kotlin-reflect 1.7.10
+			org_jetbrains_kotlin_kotlin-stdlib: kotlin-stdlib 1.7.10
+			org_jetbrains_kotlin_kotlin-stdlib-jdk7: kotlin-stdlib-jdk7 1.7.10
+			org_jetbrains_kotlin_kotlin-stdlib-jdk8: kotlin-stdlib-jdk8 1.7.10
+			org_jetbrains_kotlinx_atomicfu-jvm: atomicfu-jvm 0.18.3
+			org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm: kotlinx-coroutines-core-jvm 1.6.4
+			org_jetbrains_kotlinx_kotlinx-coroutines-jdk8: kotlinx-coroutines-jdk8 1.6.4
+			org_jetbrains_kotlinx_kotlinx-datetime-jvm: kotlinx-datetime-jvm 0.4.0
+			org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm: kotlinx-serialization-cbor-jvm 1.4.0
+			org_jetbrains_kotlinx_kotlinx-serialization-core-jvm: kotlinx-serialization-core-jvm 1.4.0
+			org_jetbrains_kotlinx_kotlinx-serialization-json-jvm: kotlinx-serialization-json-jvm 1.4.0
+		fabricloader: Fabric Loader 0.14.9
+		fabricskyboxes: FabricSkyBoxes 0.5.8
+		fabrictailor: Fabric Tailor 2.0.1
+			config2brigadier: Config to Brigadier 1.2.1
+		fabrishot: Fabrishot 1.8.0
+		fallingleaves: Falling Leaves 1.12.2+1.19.2
+		fallingtree: FallingTree 3.10.0
+		farmersdelight: Farmer's Delight 1.19-1.3.3
+		ferritecore: FerriteCore 4.2.1
+		find: Find 1.2
+		findme: FindMe 3.1.0
+		fixed-villager-trades: Fixed Villager Trades 1.1.2
+		forgeconfigapiport: Forge Config API Port 4.2.6
+		frame: Frame 0.26.1+1.19-fabric
+			frame-api-base: Frame Base 0.2.1+906ebc04a9
+			frame-blocks-v0: Frame Blocks (v0) 0.1.3+233e7428a9
+			frame-config-v0: Frame Config (v0) 0.3.1+0fa45150a9
+			frame-content-registries-v0: Frame Content Registries (v0) 0.4.0+2876b511a9
+			frame-enchantments-v0: Frame Enchantments (v0) 0.1.0+4093105da9
+			frame-game-rules-v0: Frame Game Rules (v0) 0.2.4+e7ce56a6a9
+			frame-items-v0: Frame Items (v0) 0.1.3+906ebc04a9
+			frame-loot-tables-v0: Frame Loot Tables (v0) 0.1.4+4f7341eca9
+			frame-registries-v0: Frame Registries (v0) 0.1.1+0e0ec74ea9
+			frame-rendering-v0: Frame Rendering (v0) 0.1.5+906ebc04a9
+			frame-tabbed-item-groups-v0: Frame Tabbed Item Groups (v0) 0.2.4+0aca9b56a9
+			frame-toymaker-v0: Frame Data Generation Helpers (v0) 0.6.1+b13741c3a9
+			frame-woods-v0: Frame Woods (v0) 0.2.1+6a33fbada9
+		freecam: Freecam (Modrinth Edition) 1.1.6
+		friendsandfoes: Friends&Foes 1.5.10
+		fvt: Flour's Various Tweaks 1.13.0-mc1.19.2
+		fwaystones: Fabric Waystones 3.0.3+mc1.19.2
+			pinlib: PinLib 0.1.3+1.19
+		geckolib3: Geckolib 3.1.20
+			com_eliotlash_mclib_mclib: mclib 19
+			com_eliotlash_molang_molang: molang 19
+		handoveryouritems-fabric: Hand Over Your Items (Fabric) 1.8
+		headfix: Head name fix 1.2.0
+		healingcampfire-fabric: Healing Campfire (Fabric) 3.9
+		highlighter: Highlighter 1.1.4
+		htm: Hey That's Mine 1.1.5
+		iceberg: Iceberg 1.0.46
+		iknowwhatimdoing: I Know What I'm Doing 4.1.0
+		imperishableitems: Imperishable Items 3.0.0
+		indium: Indium 1.0.9+mc1.19.2
+		inmis: Inmis 2.7.0-1.19
+		inventorytabs: Inventory Tabs 0.9.beta-1.19.x
+		invmove: InvMove 0.8.1
+		ironchests: Iron Chests 1.7.7
+			libgui: LibGui 6.2.0+1.19
+				jankson: Jankson 4.1.1+j1.2.1
+				libninepatch: LibNinePatch 1.1.0
+		itemmodelfix: Item Model Fix 1.0.3+1.19
+		jade: Jade 8.2.1
+		java: OpenJDK 64-Bit Server VM 17
+		jukeboxparticles: Jukebox Particles 1.0.0
+		krypton: Krypton 0.2.1
+			com_velocitypowered_velocity-native: velocity-native 3.1.2-SNAPSHOT
+		ksyxis: Ksyxis 1.1
+		lambdabettergrass: LambdaBetterGrass 1.3.0+1.19
+		lambdynlights: LambDynamicLights 2.1.2+1.19
+			pride: Pride Lib 1.1.2+1.19
+		lan_extender: LAN Extender 1.0.0
+			com_github_alexdlaird_java-ngrok: java-ngrok 1.5.6
+			com_google_code_gson_gson: gson 2.9.1
+			org_yaml_snakeyaml: snakeyaml 1.30
+		languagereload: Language Reload 1.3.2
+		lazydfu: LazyDFU 0.1.3
+		letmedespawn: Let Me Despawn fabric-1.0.2
+		libraryferret: Library ferret 3.0.0
+		lithium: Lithium 0.8.3
+		logical_zoom: Logical Zoom 0.0.17
+		malilib: MaLiLib 0.13.0
+		mavm: More Axolotl Variants Mod 1.1.0
+		mcwfences: Macaw's Fences and Walls 1.0.6
+		mcwlights: Macaw's Lights and Lamps 1.0.4
+		mcwroofs: Macaw's Roofs 2.2.0
+		milkallthemobs-fabric: Milk All The Mobs (Fabric) 2.1
+		minecraft: Minecraft 1.19.2
+		mineralchance-fabric: Mineral Chance (Fabric) 2.1
+		miniextras: Mini Extras 1.7.0+1.19.2
+		missingwilds: Missing Wilds 1.1.2
+		mixin-conflict-helper: Mixin Conflict Helper 1.2.0
+		mixintrace: MixinTrace 1.1.1+1.17
+		mobs_attempt_parkour: Mobs Attempt Parkour 0.3-1.19-pre1
+			maelstrom_library: Maelstrom Library 1.3-1.19-pre1
+		mobsunscreen: Mob Sunscreen 3.0.7
+		modmenu: Mod Menu 4.0.6
+		moonlight: Moonlight 1.19.2-2.0.29
+		mooshroomtweaks-fabric: Mooshroom Tweaks (Fabric) 2.1
+		moreculling: More Culling 1.19.1-0.10.0
+		moremusic: More Music 0.1.3+1.19
+		morevillagers: More Villagers 4.0.2
+		mousetweaks: Mouse Tweaks 2.22
+		musicdr: Music Duration Reducer 2.1.0
+		naturescompass: Nature's Compass 1.19.2-2.0.4-fabric
+		netherite: Easy Netherite 0.0.2-1.19.2
+		netherportalfix: NetherPortalFix 10.0.0
+		netherportalspread-fabric: Nether Portal Spread (Fabric) 6.3
+		nicemod: NiceMod - New blocks 1.1 - 1.19.2
+		nicerportals: Nicer Portals 1.0.1
+		no-telemetry: No Telemetry 1.4.0
+		no_nether_portal_overlay: No Nether Portal Overlay 1.0.3
+		nochatreports: No Chat Reports 1.19.2-v1.12.0
+		noenchantcap: No Enchant Cap 2.1.3+1.19.x
+		nofade: No Fade 1.18-2.0.1
+		nohostilesaroundcampfire-fabric: No Hostiles Around Campfire (Fabric) 4.5
+		notenoughanimations: NotEnoughAnimations 1.6.1
+		notenoughcrashes: Not Enough Crashes 4.1.8+1.19.2
+		offershud: OffersHUD 1.19.2-1.2.0
+		openpartiesandclaims: Open Parties and Claims 0.14.1
+		optigui: OptiGUI 1.1.4
+		overpoweredmending: OverpoweredMending 2.8.1
+		owo: oωo 0.8.2+1.19
+			blue_endless_jankson: jankson 1.2.1
+		perfectaccuracy: Perfect Accuracy 1.2-1.19
+		pfm: Paladin's Furniture 1.1.1
+		pickupnotifications: Pickup Notifications 1.3.0
+		picturesign: PictureSign 1.4.1
+		player-animator: Player Animator 0.4.0-test1
+		portal_accessibility: Nether Portal Accessibility 1.0.0-mc1.19
+		presencefootsteps: Presence Footsteps 1.6.2
+			kirin: Kirin UI 1.11.1
+		profundis: Profundis 1.4.1
+		purpeille: Purpeille 3.2.0+fabric-1.19
+			cmods: Combined Modifiers 1.3.1+fabric-1.19
+			voidcrafting: Void Crafting 1.7.2+fabric-1.19
+		puzzle: Puzzle 1.4.0-1.19
+			puzzle-base: Puzzle Base 1.4.0-1.19
+			puzzle-gui: Puzzle GUI 1.4.0-1.19
+			puzzle-models: Puzzle Models 1.4.0-1.19
+			puzzle-splashscreen: Puzzle Splash Screen 1.4.0-1.19
+		puzzleslib: Puzzles Lib 4.3.4
+			cardinal-components-block: Cardinal Components API (blocks) 5.0.1
+			cardinal-components-chunk: Cardinal Components API (chunks) 5.0.1
+			cardinal-components-entity: Cardinal Components API (entities) 5.0.1
+			cardinal-components-world: Cardinal Components API (worlds) 5.0.1
+		quickconnectbutton: Quick Connect Button 1.2.1
+		quickrepair: QuickRepair 1.19-2.0.0-rc.1
+		raised: Raised 1.1.2
+		recipe-unlocker: Recipe Unlocker 1.0.0
+		reeses-sodium-options: Reese's Sodium Options 1.4.7+mc1.19.2-build.59
+		replantingcrops-fabric: Replanting Crops (Fabric) 4.1
+		repurposed_structures: Repurposed Structures 6.1.1+1.19
+		runelic: Runelic 14.1.3
+		seasons: Fabric Seasons 1.4-BETA+1.19
+		servercore: ServerCore 1.3.1-1.19.1
+			me_lucko_spark-api: spark-api 0.1-SNAPSHOT
+		shinyhorses: Shiny Horses 1.0.0
+		shulkerboxtooltip: Shulker Box Tooltip 3.1.3+1.19.2
+		silencemobs-fabric: Silence Mobs (Fabric) 2.6
+		skilled_enchanting: Skilled Enchanting 1.0.0
+		skinlayers: 3d Skin Layers 1.5.1-mc1.19.1
+		skinswapper: Skin Swapper 3.1.2
+			org_apache_httpcomponents_httpclient: httpclient 4.5.10
+			org_apache_httpcomponents_httpcore: httpcore 4.4.12
+		skiptransitions: Skip Transitions 1.3.2+1.18.x
+		skyvillages: Sky Villages 1.0.2.1
+		slimyboyos: Slimy Boyos 5.0.0.3
+		smallernetherportals-fabric: Smaller Nether Portals (Fabric) 2.4
+		smoothboot: Smooth Boot 1.19-1.7.1
+		snailmail: Snail Mail 1.19-1.1.0
+		snowballsfreezemobs-fabric: Snowballs Freeze Mobs (Fabric) 2.1
+		sod: Sod 22.8.7-MC1.19.2
+		sodium: Sodium 0.4.4+build.18
+			org_joml_joml: joml 1.10.4
+		sodium-extra: Sodium Extra 0.4.10+mc1.19.2-build.64
+			caffeineconfig: CaffeineConfig 1.0.0+1.17
+		solid_mobs: Solid Mobs 1.5
+		sort: Sort 1.0.1
+		sound_physics_remastered: Sound Physics Remastered 1.19.2-1.0.15
+		soundcategories: Sound Categories 1.2.4+1.19
+		spaghettitrees: SpaghettiTrees 1.3.1+1.19
+		spark: spark 1.9.36
+		spellbound: Spellbound 1.10.0
+		spirit: Spirit 2.1.12
+		sspb: Sodium Shadowy Path Blocks 3.1.0
+		starlight: Starlight 1.1.1+fabric.ae22326
+		statuseffecttimer: Status Effect Timer 1.1.1+1.19
+		stepup: StepUp 1.19.1-fabric0.58.5-1.1
+		stoneholm: Stoneholm 1.4.4
+		structory: Structory 1.0.1
+		styledplayerlist: Styled Player List 2.2.2+1.19.1
+			player-data-api: Player Data API 0.2.1+1.19
+		subterrestrial: Subterrestrial 1.0.3
+		suggestion_tweaker: Suggestion Tweaker 1.19-1.3.0
+		t_and_t: Towns and Towers - Structure Add-on 1.8.2
+		taxfreelevels: Tax Free Levels 1.3.3
+		technomodel: technomodel 1.0.2
+		terrablender: TerraBlender 2.0.1.127
+		terralith: Terralith 2.3
+		terrestria: Terrestria 5.0.1
+			terraform-config-api-v1: Terraform Config API (v1) 4.1.1
+			terraform-dirt-api-v1: Terraform Dirt API (v1) 4.1.1
+			terraform-surfaces-api-v1: Terraform Surfaces API (v1) 4.1.1
+			terraform-tree-api-v1: Terraform Tree API (v1) 4.1.1
+			terrestria-client: Terrestria: Client 5.0.1
+			terrestria-common: Terrestria: Common 5.0.1
+			terrestria-worldgen: Terrestria: World Generation 5.0.1
+		themissingvillages: BigReefer's The Missing Villages Mod 1.1.1
+		tipthescales: Tip The Scales 6.0.6
+		tntbreaksbedrock-fabric: TNT Breaks Bedrock (Fabric) 2.4
+		tooltipfix: ToolTip Fix 1.0.5-1.19
+		tooltipscroller: Tooltip Texts Scroller 1.0.0
+		totw_additions: Towers of the Wild: Additions 1.2.3
+		traverse: Traverse 6.0.1
+			traverse-client: Traverse: Client 6.0.1
+			traverse-common: Traverse: Common 6.0.1
+			traverse-worldgen: Traverse: World Generation 6.0.1
+		trinkets: Trinkets 3.4.0
+		tumbleweed: Tumbleweed 0.5.1
+		twigs: Twigs 2.0.0-beta.9+1.19-fabric
+		uiinputundo: UI Input Undo 1.2.0
+		universal-graves: Universal Graves 2.1.1+1.19.1
+			common-protection-api: Common Protection API 1.0.0
+			hologram-api: Hologram API 0.2.2+1.19
+			polymer: Polymer (Core) 0.2.10+1.19.1
+				polymer-registry-sync-manipulator: Polymer Registry Sync Manipulator 0.0.1+1.19.1
+			server_translations_api: Server Translations API 1.4.16+1.19
+				packet_tweaker: Packet Tweaker 0.3.0+1.18.2
+			sgui: sgui 1.1.3+1.19.1
+		universal_ores: Universal Ores 1.4.2
+		unofficial_sodium_biome_blending_fix: Unofficial Sodium Biome Blending Fix 1.0.1
+		viewbobbingmod: No Screen Bobbing 1.3
+		villagebellrecipe-fabric: Village Bell Recipe (Fabric) 1.9
+		villager-hats: Villager Hats 1.4.1
+		villager_see_villager_do: Villager See, Villager Do 1.1.8
+		villagernames: Villager Names 4.0.7
+			cardinal-components-level: Cardinal Components API (world saves) 5.0.2
+		villagerquests: Villager Quests 1.0.7
+		visuality: Visuality 0.5.1
+		visualoverhaul: VisualOverhaul 4.1.1
+		visualworkbench: Visual Workbench 4.2.0
+		vitalize: Vitalize 1.0.0
+			resourcefullib: Resourceful Lib 1.1.7
+			team_reborn_energy: Energy 2.2.0
+		vmp: Very Many Players 0.2.0+beta.7.0
+		voicechat: Simple Voice Chat 1.19.2-2.3.9
+		walljump: Wall-Jump! 1.3.3+1.19
+			org_aeonbits_owner_owner: owner 1.0.12
+		waterdripsound: Drip Sounds 1.19-0.3.0
+		weaponmaster: YDM's Weapon Master 3.0.0 
+		whats_that_slot: What's That Slot? 1.3.1+1.19.2
+		whoareyou: Who are you? 1.1.0
+			yet-another-config-lib: YetAnotherConfigLib 0.1.2
+		wildtoolaccess: Wild Tool Access 1.19.2-1.1.0
+		wondrouswilds: Wondrous Wilds 1.19-1.1.1
+		world-gen: WorldGen 1.0.1
+		xaerominimap: Xaero's Minimap 22.15.1
+		xaeroworldmap: Xaero's World Map 1.28.0
+		xp_storage: XP Storage 1.4.3+1.19
+			cardinal-components-item: Cardinal Components API (items) 5.0.0-beta.1
+		yosbr: YOSBR 0.1.1
+		zombievillagersfromspawner-fabric: Zombie Villagers From Spawner (Fabric) 2.2
+	Launched Version: 1.19.2
+	Backend library: LWJGL version 3.3.1 SNAPSHOT
+	Backend API: NVIDIA GeForce GT 1030/PCIe/SSE2 GL version 3.2.0 NVIDIA 515.76, NVIDIA Corporation
+	Window size: 854x480
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: id=1280, source=API, type=ERROR, severity=HIGH, message='GL_INVALID_ENUM error generated. Polygon modes for <face> are disabled in the current profile.' x 2
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fabric'; Server brand changed to 'fabric'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 6x Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz
+	Server Running: true
+	Player Count: 1 / 8; [class_3222['nyaambxr'/499, l='ServerLevel[Home]', x=238.27, y=109.00, z=-245.87]]
+	Data Packs: vanilla, Fabric Mods
+	World Generation: Stable
+	Client Crashes Since Restart: 2
+	Integrated Server Crashes Since Restart: 0
+	Suspected Mods: Minecraft (minecraft), Fabric Loader (fabricloader), Xaero's Minimap (xaerominimap), Not Enough Crashes (notenoughcrashes)
