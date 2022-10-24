@@ -1,0 +1,14 @@
+name = "Wondrous Wilds"
+filename = "wondrouswilds-1.19-1.1.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/oTNK0RPW/versions/dMSungSp/wondrouswilds-1.19-1.1.2.jar"
+hash-format = "sha512"
+hash = "42abf96f35720a590956a22a0bb1b63a04f867def5e7c95e574c915c1cb6a6bc8eb2911f7270b9b62ffaac7c21d15c6f628f0bc140b157a1a3030d3137767265"
+
+[update]
+[update.modrinth]
+mod-id = "oTNK0RPW"
+version = "dMSungSp"

@@ -1,0 +1,14 @@
+name = "Improved Signs"
+filename = "improvedsigns-1.2.0.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/tEcCNQe7/versions/eXGUTNJu/improvedsigns-1.2.0.jar"
+hash-format = "sha512"
+hash = "58d3d58f325c41229adf991c36acf1a0e8cdd07e3f4b85a9c02c86e1d942a00aa55b69490fd8d3b1a3b4c98d56f4637b7b0a3cb74bc26dad5368db4e9bb6964b"
+
+[update]
+[update.modrinth]
+mod-id = "tEcCNQe7"
+version = "eXGUTNJu"

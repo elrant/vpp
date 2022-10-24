@@ -1,6 +1,7 @@
 {
 	"dynamicCrosshair": true,
 	"disableDebugCrosshair": false,
+	"thirdPersonCrosshair": false,
 	"hideWithScreen": true,
 	"crosshairConfig": {
 		"onBlock": "IfTargeting",

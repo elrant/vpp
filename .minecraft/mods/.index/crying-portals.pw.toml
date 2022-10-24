@@ -1,14 +1,14 @@
-name = "Crying Portals"
-filename = "cryingportals-fabric_1.19.2-1.6.jar"
+name = "Crying Portals (Fabric)"
+filename = "cryingportals-fabric_1.19.2-1.8.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/3RkVNglH/versions/5RGpsNRI/cryingportals-fabric_1.19.2-1.6.jar"
+url = "https://cdn.modrinth.com/data/3RkVNglH/versions/TkFgqKu7/cryingportals-fabric_1.19.2-1.8.jar"
 hash-format = "sha512"
-hash = "d0bc380a62d6aaa62a9a4eb0bab96ccf5202dd28aa5180d71e1d207e0a6d75d55ad76427df7c3065c84f5b5a888e010a30238573abc91f6158abe08294ae0543"
+hash = "acd1464eaac27c843cd6e77d42d24a6646bb081557747a8081dfabd3ef1b17d88981e5a73a63156478a02a388193b921a4817cd86bd45f16981c239eb9d42845"
 
 [update]
 [update.modrinth]
 mod-id = "3RkVNglH"
-version = "5RGpsNRI"
+version = "TkFgqKu7"
