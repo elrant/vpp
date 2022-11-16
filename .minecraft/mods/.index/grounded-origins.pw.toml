@@ -1,0 +1,14 @@
+name = "Grounded Origins"
+filename = "grounded_origins-fabric-1.19.2-1.2.3.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/xBBfSwqZ/versions/ceUIctLZ/grounded_origins-fabric-1.19.2-1.2.3.jar"
+hash-format = "sha512"
+hash = "0ef32ed142dfcf4bdcbad8be05819434acdc2463d236ea1dcbfe63864959e487ae8f25f363411df792654ac9c7dc7c00702e5e0a2fee9f5d9762b05917b3b7d6"
+
+[update]
+[update.modrinth]
+mod-id = "xBBfSwqZ"
+version = "ceUIctLZ"

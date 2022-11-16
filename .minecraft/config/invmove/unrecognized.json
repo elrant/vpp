@@ -67,7 +67,8 @@
     "io.github.kosmx.emotes.arch.gui.screen.ingame.FullScreenListImpl": true,
     "xaero.pac.client.gui.MainMenu": true,
     "net.villagerquests.gui.PlayerQuestScreen": true,
-    "io.github.kosmx.emotes.arch.gui.EmoteMenuImpl": true
+    "io.github.kosmx.emotes.arch.gui.EmoteMenuImpl": true,
+    "com.aizistral.nochatreports.gui.EncryptionConfigScreen": true
   },
   "hideBackground": {
     "svenhjol.charm.module.woodcutters.WoodcutterScreen": true,

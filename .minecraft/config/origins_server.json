@@ -1,4 +1,162 @@
 {
   "performVersionCheck": true,
-  "origins": {}
+  "origins": {
+    "felineplus:felineplus": {
+      "enabled": true,
+      "felineplus:jump": true,
+      "felineplus:fall_immunity": true,
+      "origins:scare_creepers": true,
+      "felineplus:nocturnal": true
+    },
+    "origins-classes:nitwit": {
+      "enabled": true
+    },
+    "origins:enderian": {
+      "enabled": true
+    },
+    "enderminus:enderminus": {
+      "enabled": true,
+      "enderminus:blink": true,
+      "enderminus:reach": true,
+      "origins:ender_particles": true
+    },
+    "origins:feline": {
+      "enabled": true
+    },
+    "origins:elytrian": {
+      "enabled": true
+    },
+    "arachnidplus:arachnidplus": {
+      "enabled": true,
+      "arachnidplus:climbing": true,
+      "arachnidplus:eyes": true,
+      "arachnidplus:master_of_webs": true,
+      "arachnidplus:no_suffocation": true,
+      "origins:arthropod": true,
+      "arachnidplus:break_speed": true,
+      "origins:master_of_webs_no_slowdown": true,
+      "arachnidplus:pfall": true
+    },
+    "grounded_origins:deer": {
+      "enabled": true,
+      "origins:vegetarian": true,
+      "grounded_origins:deer/forest_native": true,
+      "grounded_origins:deer/berry_good": true,
+      "grounded_origins:deer/oh_deer": true,
+      "grounded_origins:deer/lightweight": true,
+      "grounded_origins:deer/springed_step": true,
+      "grounded_origins:deer/hooved_grace": true
+    },
+    "origins:phantom": {
+      "enabled": true
+    },
+    "lepus:lepus": {
+      "enabled": true,
+      "lepus:leap": true,
+      "lepus:fall_immunity": true,
+      "lepus:energetic": true,
+      "lepus:forager": true
+    },
+    "origins:blazeborn": {
+      "enabled": true
+    },
+    "origins:avian": {
+      "enabled": true
+    },
+    "blazebornplus:blazebornplus": {
+      "enabled": true,
+      "blazebornplus:fire_immunity": true,
+      "blazebornplus:lava_vision": true,
+      "blazebornplus:lava_swimming": true,
+      "origins:flame_particles": true,
+      "blazebornplus:lavafall": true
+    },
+    "grounded_origins:moth": {
+      "enabled": true,
+      "grounded_origins:moth/insect": true,
+      "grounded_origins:moth/winged": true,
+      "grounded_origins:moth/flutter": true,
+      "grounded_origins:moth/pollinator": true,
+      "grounded_origins:moth/fibrous_diet": true,
+      "grounded_origins:moth/nectar_production": true,
+      "grounded_origins:moth/four_arms": true,
+      "grounded_origins:moth/water_vulnerability": true,
+      "grounded_origins:moth/flammable": true,
+      "grounded_origins:moth/phototactic": true,
+      "grounded_origins:moth/nocturnal": true
+    },
+    "avianplus:avianplus": {
+      "enabled": true,
+      "avianplus:flap": true,
+      "avianplus:active_slow_fall": true,
+      "avianplus:like_air": true
+    },
+    "grounded_origins:beach_crab": {
+      "enabled": true,
+      "grounded_origins:beach_crab/home": true,
+      "grounded_origins:beach_crab/rave": true,
+      "grounded_origins:beach_crab/krusty": true,
+      "grounded_origins:beach_crab/legs_n_chelipeds": true,
+      "grounded_origins:beach_crab/crawler": true,
+      "grounded_origins:beach_crab/pincers": true,
+      "grounded_origins:beach_crab/shell": true,
+      "grounded_origins:beach_crab/crustacean_gills": true,
+      "grounded_origins:beach_crab/kelpomaniac": true,
+      "origins:aqua_affinity": true,
+      "origins:no_shield": true
+    },
+    "origins:human": {
+      "enabled": true
+    },
+    "tinker_dryad:dryad": {
+      "enabled": true,
+      "tinker_dryad:photosynthesis": true,
+      "tinker_dryad:photosynthesis_hidden": true,
+      "tinker_dryad:root": true
+    },
+    "origins:shulk": {
+      "enabled": true
+    },
+    "grounded_origins:penguin": {
+      "enabled": true,
+      "grounded_origins:penguin/happy_feet": true,
+      "grounded_origins:penguin/cold_embrace": true,
+      "grounded_origins:penguin/belly_sledding": true,
+      "origins:fragile": true,
+      "grounded_origins:penguin/fuzzy_fur": true,
+      "grounded_origins:penguin/aquatic_diet": true,
+      "grounded_origins:penguin/webbed_feet": true,
+      "grounded_origins:penguin/aquatic_lunge": true,
+      "grounded_origins:penguin/fish_hunter": true
+    },
+    "tinkervamp:vampire": {
+      "enabled": true,
+      "tinkervamp:blood": true,
+      "tinkervamp:blood_hidden": true,
+      "tinkervamp:feed": true,
+      "tinkervamp:nightstalker": true
+    },
+    "origins:merling": {
+      "enabled": true
+    },
+    "origins:arachnid": {
+      "enabled": true
+    },
+    "merplus:merplus": {
+      "enabled": true,
+      "merplus:water_breathing": true,
+      "merplus:swim_speed": true,
+      "merplus:wet_eyes": true,
+      "origins:like_water": true,
+      "origins:conduit_power_on_land": true,
+      "origins:aquatic": true,
+      "merplus:aqua_affinity": true
+    },
+    "shulkplus:shulkplus": {
+      "enabled": true,
+      "shulkplus:turtle": true,
+      "shulkplus:attack": true,
+      "shulkplus:hoarder": true
+    }
+  }
 }

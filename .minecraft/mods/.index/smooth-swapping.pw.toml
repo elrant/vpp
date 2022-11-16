@@ -1,0 +1,14 @@
+name = "Smooth Swapping"
+filename = "Smooth Swapping 0.5 (1.19.2)-0.5.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/ydZic5r4/versions/Iiy6qPq4/Smooth Swapping 0.5 %281.19.2%29-0.5.jar"
+hash-format = "sha512"
+hash = "d1ff196fe5db70f696d4e12f9e2b6dd825d8a8ee54f4e3c916a3b09d9db4a69eedd9911c27b8922928adc74ba799ae7c1109da9f5e75ce079a29bb63f90ae070"
+
+[update]
+[update.modrinth]
+mod-id = "ydZic5r4"
+version = "Iiy6qPq4"
