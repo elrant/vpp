@@ -1,7 +1,7 @@
 
 # Vanilla++
 
-Team Elrant's Vanilla++ is a kitchen-sink(ish) modpack focused on keeping a Vanilla feel.
+[Team Elrant's Vanilla++](https://modrinth.com/modpack/vpp) is a kitchen-sink(ish) modpack focused on keeping a Vanilla feel.
 
 Key Features:
 
