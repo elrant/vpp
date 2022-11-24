@@ -1,0 +1,14 @@
+name = "Mooshroom Tweaks (Fabric)"
+filename = "mooshroomtweaks-fabric_1.19.2-2.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/B10lMHiA/versions/Z4M82sPu/mooshroomtweaks-fabric_1.19.2-2.2.jar"
+hash-format = "sha512"
+hash = "08db1f74055b2df3c9b6a4c10a176bddc485812256ba46e44beee9f1b5a414d1dfca5c8af6b4bc8e57afdc77aa3e396d7346e193dd834610d5445bcf6e3ab19b"
+
+[update]
+[update.modrinth]
+mod-id = "B10lMHiA"
+version = "Z4M82sPu"

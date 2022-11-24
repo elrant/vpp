@@ -1,0 +1,14 @@
+name = "YDM's Weapon Master"
+filename = "weaponmaster-multi-fabric-1.19-3.0.2.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "eeaa0f37fa0d85522d92515382d9eae65877584e"
+
+[update]
+[update.curseforge]
+file-id = 4001578
+project-id = 608235

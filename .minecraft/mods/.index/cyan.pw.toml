@@ -1,0 +1,14 @@
+name = "Cyan"
+filename = "Cyan-0.6.1+1.19.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/zGxxQr33/versions/MQwtQZzC/Cyan-0.6.1%2B1.19.2.jar"
+hash-format = "sha512"
+hash = "74df831831b3b448f507b72e432399dfa1b1382ffcae531e6a3cb9dd4be566553080150ef3b25edfd489220db2656b2efd7dd6668bf5e4c3cd90e281ad2b52ac"
+
+[update]
+[update.modrinth]
+mod-id = "zGxxQr33"
+version = "MQwtQZzC"

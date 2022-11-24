@@ -1,14 +1,14 @@
 name = "Sod"
-filename = "Sod-1.19.X-22.08.07-FabricQuilt.jar"
+filename = "Grass_Overhaul-Fabric-22.10.13.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/Eeb4VkF6/versions/22.08.07/Sod-1.19.X-22.08.07-FabricQuilt.jar"
+url = "https://cdn.modrinth.com/data/Eeb4VkF6/versions/TrX9RqAN/Grass_Overhaul-Fabric-22.10.13.jar"
 hash-format = "sha512"
-hash = "8bbf9e0f5c5634d28bf6806d7fae909470660c5cb4537bdd67d65e054724a37038d249353a9a64ac494ee7e610ab47f4cf8d58e83c77dce755d32ccad8d9d6d1"
+hash = "e5c854ea27473592de122e0b4e802fc84ed1d53b700c29a4c59e1b2d31e4483820109a26bde624bc9437b1350d28e6606a2a2458311dd00a74f332fbe032562c"
 
 [update]
 [update.modrinth]
 mod-id = "Eeb4VkF6"
-version = "XBNtmxZs"
+version = "TrX9RqAN"

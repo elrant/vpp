@@ -1,9 +1,0 @@
-unit_repair_default=true
-unit_repair_enchanted_default=false
-unit_repair_rate_default=0.25
-combine_repair_default=true
-combine_bonus_default=0.0
-item_naming_default=false
-shapeless_crafting_default=false
-smithing_default=true
-player_config_command=false

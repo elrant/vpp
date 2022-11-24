@@ -1,0 +1,14 @@
+name = "Mineral Chance (Fabric)"
+filename = "mineralchance-fabric_1.19.2-2.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/bu1hACOl/versions/JIVPzyIp/mineralchance-fabric_1.19.2-2.2.jar"
+hash-format = "sha512"
+hash = "30cd973f97171c0331fd69fb1a07b808cd0c8a75a60551ee0585391ba32ed70cc9c225771dd473466de5176f24c23e2aa7bd9a2c30a94e3e96838619bb173635"
+
+[update]
+[update.modrinth]
+mod-id = "bu1hACOl"
+version = "JIVPzyIp"

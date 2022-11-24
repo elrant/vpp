@@ -1,0 +1,14 @@
+name = "Dismount Entity (Fabric)"
+filename = "dismountentity-fabric_1.19.2-2.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/H7N61Wcl/versions/XGpR45wy/dismountentity-fabric_1.19.2-2.1.jar"
+hash-format = "sha512"
+hash = "054ef75a82528a85c180a98e996d4ddb3aea548c1e7fb303c89399cad3ea3261073402530d58eb16498fb578c678d3b6b89ebd3bb551b56c41bab3525ee1f010"
+
+[update]
+[update.modrinth]
+mod-id = "H7N61Wcl"
+version = "XGpR45wy"

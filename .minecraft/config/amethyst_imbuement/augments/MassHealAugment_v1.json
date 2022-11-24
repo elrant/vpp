@@ -1,7 +1,0 @@
-{
-  "id": "amethyst_imbuement:mass_heal",
-  "enabled": true,
-  "cooldown": 20,
-  "manaCost": 2,
-  "minLvl": 1
-}

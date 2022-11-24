@@ -1,0 +1,14 @@
+name = "End Portal Recipe (Fabric)"
+filename = "endportalrecipe-fabric_1.19.2-4.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/VbCjkvcq/versions/qLptseIl/endportalrecipe-fabric_1.19.2-4.1.jar"
+hash-format = "sha512"
+hash = "9767a9f5a2558aa2e54b0714710093887949b58534a0e183a1a817dc7dce4dc13cf6c9170e394bfbac4d7ae9a8facd768605e2484c9cf42d1fc24fa71ae1d3e3"
+
+[update]
+[update.modrinth]
+mod-id = "VbCjkvcq"
+version = "qLptseIl"

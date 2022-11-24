@@ -1,14 +1,14 @@
-name = "playerAnimator"
-filename = "player-animation-lib-fabric-0.4.0-test1.jar"
+name = "Player Animator"
+filename = "player-animation-lib-fabric-0.4.0-test4.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/gedNE4y2/versions/U34MtBQJ/player-animation-lib-fabric-0.4.0-test1.jar"
+url = "https://cdn.modrinth.com/data/gedNE4y2/versions/jHIScPki/player-animation-lib-fabric-0.4.0-test4.jar"
 hash-format = "sha512"
-hash = "807ed4a819a96c90d665d96fdc5a291f6a27bdbf5c15ee362450702760e4a30937c80547bc536826e4a550e22e555e23abc08911bb0a3c4a7f39bb35642d0f96"
+hash = "9fa7449beb39c29f08cd58806e7c415a7b6db39148c3f83e14d43f384b9e3436bbb8dfe17f8b1fb87d96c7f189abdd492f7f51f596aeab7eb031f31d223ff857"
 
 [update]
 [update.modrinth]
 mod-id = "gedNE4y2"
-version = "U34MtBQJ"
+version = "jHIScPki"

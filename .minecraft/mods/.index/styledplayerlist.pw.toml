@@ -1,0 +1,14 @@
+name = "Styled Player List"
+filename = "styledplayerlist-2.2.2+1.19.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/DQIfKUHf/versions/2.2.2%2B1.19.1/styledplayerlist-2.2.2%2B1.19.1.jar"
+hash-format = "sha512"
+hash = "315d5729bbecf57292221e06926d19bde544c9642e6ab0503461b15d252cd616e08d234575ef6a3d0a63566b22d5b896d12c5fd09f274f335b9fda01a9b736f0"
+
+[update]
+[update.modrinth]
+mod-id = "DQIfKUHf"
+version = "92EZUM0l"

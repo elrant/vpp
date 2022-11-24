@@ -1,0 +1,14 @@
+name = "ColouredTooltips"
+filename = "ColouredTooltips-Fabric-1.19.2-18.1.4.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "077ec3dd6b4a0f03807f6bc2e2a6722d3f54b9d5"
+
+[update]
+[update.curseforge]
+file-id = 4013499
+project-id = 285684

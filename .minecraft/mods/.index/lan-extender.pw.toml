@@ -1,0 +1,14 @@
+name = "LAN Extender"
+filename = "lan-extender-fabric-mc1.19-1.1.0.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/bvX7CV7s/versions/EBdYn7cM/lan-extender-fabric-mc1.19-1.1.0.jar"
+hash-format = "sha512"
+hash = "dc5a314679b236516ff05ccc28906374f760207350f33c9cddfddc439fc4e64cd9927b535c7f961ec912f16965591de6d8dd106955aebf49e8b72be10569ca2d"
+
+[update]
+[update.modrinth]
+mod-id = "bvX7CV7s"
+version = "EBdYn7cM"

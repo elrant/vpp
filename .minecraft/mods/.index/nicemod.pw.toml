@@ -1,0 +1,14 @@
+name = "NiceMod - New blocks"
+filename = "nicemod-1.2 - 1.19.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/QxAXhkEQ/versions/2TTwVm0S/nicemod-1.2 - 1.19.2.jar"
+hash-format = "sha512"
+hash = "ddba72f842e50947a13389bb9b2d737479ef8fb7f96e1fbb8a2945a6b614c6fb95e1aafec154c5fe272ad8585413d7b0debcfc9eb7d0f2b7960a7286e14ae982"
+
+[update]
+[update.modrinth]
+mod-id = "QxAXhkEQ"
+version = "2TTwVm0S"

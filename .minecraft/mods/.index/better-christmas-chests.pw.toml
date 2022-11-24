@@ -1,0 +1,14 @@
+name = "Better Christmas Chests"
+filename = "better-christmas-chests-mc1.19-4.0.1+build.17.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/57LuwxDi/versions/11rTOBQt/better-christmas-chests-mc1.19-4.0.1%2Bbuild.17.jar"
+hash-format = "sha512"
+hash = "0678fe4d7ebe18a1e7d190b929adc20fc917200ef052c1188cd87d31ec66e548f34fa922437ff41d4c4747491618414f23692f5d9b6c81082d8448b32e314b9b"
+
+[update]
+[update.modrinth]
+mod-id = "57LuwxDi"
+version = "11rTOBQt"

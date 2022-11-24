@@ -1,14 +1,14 @@
 name = "Wondrous Wilds"
-filename = "wondrouswilds-1.19-1.1.2.jar"
+filename = "wondrouswilds-1.19.2-1.1.5.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/oTNK0RPW/versions/dMSungSp/wondrouswilds-1.19-1.1.2.jar"
+url = "https://cdn.modrinth.com/data/oTNK0RPW/versions/1YMq7qpK/wondrouswilds-1.19.2-1.1.5.jar"
 hash-format = "sha512"
-hash = "42abf96f35720a590956a22a0bb1b63a04f867def5e7c95e574c915c1cb6a6bc8eb2911f7270b9b62ffaac7c21d15c6f628f0bc140b157a1a3030d3137767265"
+hash = "54ff66a635af8cff60d4d90aade7bfb1aeb196af2f83357641293a3026ccf28baee2bebeb43013ec650526bd537e26ededf0ba4359b1f946c137082b2ac90d95"
 
 [update]
 [update.modrinth]
 mod-id = "oTNK0RPW"
-version = "dMSungSp"
+version = "1YMq7qpK"

@@ -1,0 +1,14 @@
+name = "🪵 Twigs"
+filename = "twigs-2.0.0-beta.9+1.19-fabric.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/RG50cUrX/versions/YeenQwCj/twigs-2.0.0-beta.9%2B1.19-fabric.jar"
+hash-format = "sha512"
+hash = "005525127e2af93382b20be8741b2faba01d22b223b9d8d73b86cdd080de09491de7a0d6a9350711f063f5cf81eca055513a8ea6a771517ca07501bf9d041fc9"
+
+[update]
+[update.modrinth]
+mod-id = "RG50cUrX"
+version = "YeenQwCj"

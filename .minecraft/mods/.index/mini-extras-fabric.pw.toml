@@ -1,0 +1,14 @@
+name = "Mini Extras"
+filename = "mini-extras-fabric-1.7.3+1.19.2.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "d6e64a08f44966660ff32232396cfb3253dd7397"
+
+[update]
+[update.curseforge]
+file-id = 4023341
+project-id = 412467

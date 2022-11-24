@@ -1,0 +1,14 @@
+name = "UI Input Undo (Fabric)"
+filename = "uiinputundo-1.2.0.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/lyl0ZcTc/versions/v1.2b/uiinputundo-1.2.0.jar"
+hash-format = "sha512"
+hash = "79929e2ae559f53b254c3de53fe122ba3b6399c9d22e9733da6a0465082ec65ed26de88f0523ee3d79110e8efb562fb520dee27d230c84959ecfa11db89efc2c"
+
+[update]
+[update.modrinth]
+mod-id = "lyl0ZcTc"
+version = "Dnjzy9vh"

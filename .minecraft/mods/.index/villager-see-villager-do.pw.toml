@@ -1,0 +1,14 @@
+name = "Villager See, Villager Do"
+filename = "villager-see-villager-do-1.1.8+MC1.19-1.19.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/nCJ3OD1g/versions/1.1.8%2BMC1.19-1.19.2/villager-see-villager-do-1.1.8%2BMC1.19-1.19.2.jar"
+hash-format = "sha512"
+hash = "42b1de85d970fc8b164f7535b0248ce02c7d679cf1abcc8fd10fdd6317db6ad299301a8555f28ca21f93899ba4d456fc2e646c0945dfd761dddf611b507deacc"
+
+[update]
+[update.modrinth]
+mod-id = "nCJ3OD1g"
+version = "7WFUFIYK"

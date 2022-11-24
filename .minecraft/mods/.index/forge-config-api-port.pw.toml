@@ -1,14 +1,14 @@
 name = "Forge Config API Port"
-filename = "ForgeConfigAPIPort-v4.2.6-1.19.2-Fabric.jar"
+filename = "ForgeConfigAPIPort-v4.2.7-1.19.2-Fabric.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/ohNO6lps/versions/XhjJZ5uE/ForgeConfigAPIPort-v4.2.6-1.19.2-Fabric.jar"
+url = "https://cdn.modrinth.com/data/ohNO6lps/versions/fI5AsaV4/ForgeConfigAPIPort-v4.2.7-1.19.2-Fabric.jar"
 hash-format = "sha512"
-hash = "f8deaaabd075986d6df5bffae50e02c1659476650173630b8bace35e4fe2b8a4c30818ed2fcff1c4ff92513c283b521c0ed47f92b64f98a9e76472d4026683f1"
+hash = "1c1366bc20fc06ff39ebfb7725a278c404a23a7953567a2074fd7ff125a81e75fb71b7df6aaf0f8cfa533c4c2c290d1100651a56b7b566740392e31aefe9707d"
 
 [update]
 [update.modrinth]
 mod-id = "ohNO6lps"
-version = "XhjJZ5uE"
+version = "fI5AsaV4"

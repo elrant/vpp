@@ -1,3 +1,0 @@
-lapiscost:6
-uselevel:false
-levelcost:3

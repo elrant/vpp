@@ -1,0 +1,14 @@
+name = "Milk All The Mobs (Fabric)"
+filename = "milkallthemobs-fabric_1.19.2-2.2.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/qRidloO4/versions/Drf3eppu/milkallthemobs-fabric_1.19.2-2.2.jar"
+hash-format = "sha512"
+hash = "6a0dde0c071f328c14ab1bbce783cf019f80c7c40c1e997f95ab4bd5acf1886d6500103650de632176bb758d9f7dd0033aee29fa78a047df246a15bc9e582435"
+
+[update]
+[update.modrinth]
+mod-id = "qRidloO4"
+version = "Drf3eppu"

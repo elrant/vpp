@@ -1,0 +1,14 @@
+name = "Silence Mobs (Fabric)"
+filename = "silencemobs-fabric_1.19.2-2.7.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/rpmGvDKs/versions/SRCTf7Xt/silencemobs-fabric_1.19.2-2.7.jar"
+hash-format = "sha512"
+hash = "5685a6aab7818235d2a564866ed4efe6fe8f338e3eae8d23b6d52c2fe7a4b0214e066efc040fa156b7aa3b8da1a0c07ad636a4a4da9215ad3f4d7de0761e3209"
+
+[update]
+[update.modrinth]
+mod-id = "rpmGvDKs"
+version = "SRCTf7Xt"

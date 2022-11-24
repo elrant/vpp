@@ -1,14 +1,14 @@
 name = "Dynamic Crosshair"
-filename = "dynamiccrosshair-3.9+1.19.jar"
+filename = "dynamiccrosshair-3.11+1.19.2.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/ZcR9weSm/versions/DOxF1Usr/dynamiccrosshair-3.9%2B1.19.jar"
+url = "https://cdn.modrinth.com/data/ZcR9weSm/versions/hBz2RX9S/dynamiccrosshair-3.11%2B1.19.2.jar"
 hash-format = "sha512"
-hash = "de2dc1d47e18a4291625c10c1e14441eeb50100c541623a2bbf9690418cf8454bb46da3954d9e2281cb6bd0ce1cffd84e984744ea715bbb13a110cb67b8a0d3e"
+hash = "af9aba55b247e85d95f9aacaf969fcaf67614b6f3f9c96fcc8d45bfb405d6846d5a8b455f62a76561f8f26b85bce163f2d1231196fd60580f66ae409bc75ca07"
 
 [update]
 [update.modrinth]
 mod-id = "ZcR9weSm"
-version = "DOxF1Usr"
+version = "hBz2RX9S"

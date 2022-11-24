@@ -1,14 +1,14 @@
-name = "Towns and Tower - Structure Add-on"
-filename = "Towns-and-Towers-1.19-1.8.2.jar"
+name = "Towns and Towers - Structure Add-on"
+filename = "Towns-and-Towers-v.1.10.1-FABRIC-1.19.2.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/DjLobEOy/versions/1.8.2/Towns-and-Towers-1.19-1.8.2.jar"
+url = "https://cdn.modrinth.com/data/DjLobEOy/versions/s7UXEluf/Towns-and-Towers-v.1.10.1-FABRIC-1.19.2.jar"
 hash-format = "sha512"
-hash = "c66cb9fff1b383075d515e7bdd5b1153cd49b8ca32e21b90d9fb081ffac8369725680173cc36bd04ca9378c66b8f9a7ceef6da0a5a52f2d453073c60cc692954"
+hash = "d9aa724aa8e626dd3ec88afd97d5eb39e0ff48fb0b96a4ac16925291d38020c51d24dbf4057ab63fa319517d15fbcc8e31c4f918bf7d3224544e9cd5b07b7ca4"
 
 [update]
 [update.modrinth]
 mod-id = "DjLobEOy"
-version = "NpbTlN8o"
+version = "s7UXEluf"

@@ -1,0 +1,14 @@
+name = "Villagers Respawn  (Now with FORGE and FABRIC versions)"
+filename = "fabric-villagersrespawn-1.19-5.jar"
+side = "both"
+
+[download]
+mode = "metadata:curseforge"
+url = ""
+hash-format = "sha1"
+hash = "bf037189a30a66e7856466bacd70a2e5f500c283"
+
+[update]
+[update.curseforge]
+file-id = 3968830
+project-id = 396041

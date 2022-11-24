@@ -1,0 +1,14 @@
+name = "TNT Breaks Bedrock (Fabric)"
+filename = "tntbreaksbedrock-fabric_1.19.2-2.5.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/eU2O6Xp1/versions/QeLWVDxY/tntbreaksbedrock-fabric_1.19.2-2.5.jar"
+hash-format = "sha512"
+hash = "ed808e575ceb13d7d2d9423fcbebfd014df20558d3e948d6badba0026c9d244f2dfaa584196651863902b81ce0334933c37d7d843d340f26b63d98f380db3c58"
+
+[update]
+[update.modrinth]
+mod-id = "eU2O6Xp1"
+version = "QeLWVDxY"

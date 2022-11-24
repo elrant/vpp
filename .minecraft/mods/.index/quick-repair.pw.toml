@@ -1,0 +1,14 @@
+name = "Inventory Interactions"
+filename = "quickrepair-1.19-2.0.0-rc.1.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/Uujh5wUc/versions/1.19-2.0.0-rc.1/quickrepair-1.19-2.0.0-rc.1.jar"
+hash-format = "sha512"
+hash = "8d153d69f4b11898fd221da8cb7900694825e05ee5d4bbc6f8d38657a428d83b5f1cd0e67b79784833f853b646f2e974b6d9318a330c81673ba4ff43baa5f610"
+
+[update]
+[update.modrinth]
+mod-id = "Uujh5wUc"
+version = "DVWYcsgk"

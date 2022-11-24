@@ -1,14 +1,14 @@
 name = "Auditory"
-filename = "auditory-0.0.3-1.19.x.jar"
+filename = "auditory-0.0.4-1.19.x.jar"
 side = "both"
 
 [download]
 mode = "url"
-url = "https://cdn.modrinth.com/data/1LjfkWOR/versions/mAdTntVd/auditory-0.0.3-1.19.x.jar"
+url = "https://cdn.modrinth.com/data/1LjfkWOR/versions/Sz9YgtT5/auditory-0.0.4-1.19.x.jar"
 hash-format = "sha512"
-hash = "f2303e354a8d70d984cfdc9c0a12062e3defc6bd7478a573cdb8c4836b004cfe45539f88273ebaea529360626c3438321ab5fe61de619266ecffb7b67b4a3cfa"
+hash = "7aa43cfcf0d7b8d5448054e911d8d749b2c233d8e80ed9eed2b38ccf44b232c91b77a4ac7bb85fda9d946cf6cf364bc85ad406cbcb22bdad313871b8fd977f1c"
 
 [update]
 [update.modrinth]
 mod-id = "1LjfkWOR"
-version = "mAdTntVd"
+version = "Sz9YgtT5"

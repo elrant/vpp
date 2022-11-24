@@ -1,0 +1,14 @@
+name = "CraftPresence"
+filename = "CraftPresence-1.19.2-Release-1.9.6-universal.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/DFqQfIBR/versions/ci5X3zwU/CraftPresence-1.19.2-Release-1.9.6-universal.jar"
+hash-format = "sha512"
+hash = "dd37d5bc1e069808bdf5080b65850df7a3abae10f7164a516e96b3b8376004ad9b445b845ba9c96882f9805ad09dc61d03ce7fbe5ad0c1c066a65aa4401c965c"
+
+[update]
+[update.modrinth]
+mod-id = "DFqQfIBR"
+version = "ci5X3zwU"

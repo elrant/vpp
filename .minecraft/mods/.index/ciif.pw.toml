@@ -1,0 +1,14 @@
+name = " CIIF - Craftable Invisible Item Frames"
+filename = "ciif-1.0.0+1.19.jar"
+side = "both"
+
+[download]
+mode = "url"
+url = "https://cdn.modrinth.com/data/ugdIcPlt/versions/1.0.0%2B1.19/ciif-1.0.0%2B1.19.jar"
+hash-format = "sha512"
+hash = "0cc19b1ac5cc081382715a660962ad026973c24983c3b6c6374bb367cd78f30a5811f200796fc953ca4f2927ff9c6cef665b610000029f34408f5c5d500d13f1"
+
+[update]
+[update.modrinth]
+mod-id = "ugdIcPlt"
+version = "Dd3HbRCH"
